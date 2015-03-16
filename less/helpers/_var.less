@@ -1,0 +1,55 @@
+@size: 100% / 12;
+
+@dark: #222222;
+@light: #ecf0f1;
+@color: #3c6ab3; //Blue
+@main: #43362b; //BrownISH
+
+@font-size: 16px;
+@font-line-height: 24px;
+
+div[class*="col-"][class*="color-"]{
+	text-align: center;
+	&.color-dark{
+		background-color: @dark;
+		border-bottom: 2px solid darken(@dark, 20%);
+		color: @light;
+		&:after{
+			content: '@dark: @{dark}';
+			display: block;
+		}
+	}
+	
+	&.color-light{
+		background-color: @light;
+		border-bottom: 2px solid darken(@light, 20%);
+		color: @dark;
+		&:after{
+			content: '@light: @{light}';
+			display: block;
+		}
+	}
+	
+	&.color-main{
+		background-color: @main;
+		border-bottom: 2px solid darken(@main, 20%);
+		color: @light;
+		&:after{
+			content: '@main: @{main}';
+			display: block;
+		}
+	}
+	
+	&.color-color{
+		background-color: @color;
+		border-bottom: 2px solid darken(@color, 20%);
+		color: @light;
+		&:after{
+			content: '@color: @{color}';
+			display: block;
+		}
+	}
+}
+
+
+
