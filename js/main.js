@@ -65,12 +65,9 @@
 		playbtn.addEventListener("click", function() {
 			playPause();
 		});
-		video.addEventListener("click", function() {
+		wrapper.addEventListener("click", function() {
 			playPause();
 		});
-//		wrapper.addEventListener("click", function() {
-//			playPause();
-//		});
 		
 		function playPause() {
 			if (video.paused) {
