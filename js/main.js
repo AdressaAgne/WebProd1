@@ -135,9 +135,11 @@
 		function resize() {
 			if (block.className == "col-12") {
 				block.className = "col-8";
+				document.getElementById("text").className = "col-4";
 				expand.innerHTML = "<i class='fa fa-expand fa-fw'></i>"
 			} else {
 				block.className = "col-12";
+				document.getElementById("text").className = "col-8";
 				expand.innerHTML = "<i class='fa fa-compress fa-fw'></i>"
 			}
 		}
