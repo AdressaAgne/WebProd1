@@ -196,7 +196,7 @@
 		});
 		function toTime(sec) {
 			
-			var hours   = Math.floor(sec / 3600);
+			var hours = Math.floor(sec / 3600);
 			var minutes = Math.floor((sec - (hours * 3600)) / 60);
 			var seconds = sec - (hours * 3600) - (minutes * 60);
 			
@@ -235,7 +235,7 @@
 		
 		tags.addEventListener("click", function(e) {
 			e = e.target;
-			console.log(e);
+
 			
 			var p = e.getAttribute("data-time");
 			var l = video.duration / 100;
