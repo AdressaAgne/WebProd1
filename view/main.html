@@ -17,28 +17,38 @@
 <body>
 	<div class="container">
 			<div class="page-header">
-				<h2>Name of course</h2>
+				<h2>Programming for Web: Lecture 1</h2>
 			</div>
 			
 			<div class="row">
-				<div class="col-8">
-					<div class="col-12 well">
-						<h3>Video</h3>
+				<div class="col-8" id="video-block">
+					<div class="col-12">
 						<div class="video">
-							<video id="video" class="hand" src="../video/vid.mp4" preload="true"><div class="video-overlay"></div></video>
+							<video id="video" class="hand pause" src="../video/vid.mp4" preload="true"><div class="video-overlay"></div></video>
+							<div class="video-duration">
+								<div class="video-progress hand" id="video-bar">
+									<div class="video-progress-inner" id="video-progress-inner"></div>
+								</div>
+								<div class="col-4 col-phone-4 align-left">
+									<label id="video-current-time">00:00</label>
+								</div>
+								<div class="col-4 col-phone-4">
+									<div class="video-controlls align-center">
+										<button class="btn negative" id="video-play"><i class="fa fa-play fa-fw"></i></button>
+										<button class="btn negative" id="video-expand"><i class="fa fa-expand fa-fw"></i></button>
+									</div>
+								</div>
+								<div class="col-4 col-phone-4 align-right">
+									<label id="video-total-time">00:00</label>
+								</div>
+							</div>
 							
-							<div class="video-progress hand" id="video-bar">
-								<div class="video-progress-inner" id="video-progress-inner"></div>
-							</div>
-							<div class="video-controlls">
-								<button class="btn" id="video-play"><i class="fa fa-play fa-fw"></i></button>
-							</div>
-							<div class="video-tags">
-								<ul class="list-inline">
-									<li class="tag">00:12</li>
-									<li class="tag">00:42</li>
-									<li class="tag">01:02</li>
-									<li class="tag">01:32</li>
+							<div class="video-tags col-12">
+								<ul class="list-inline" id="video-tags">
+									<li class="tag hand" data-time="10">Lecture Start</li>
+									<li class="tag hand" data-time="40">Chapter 1</li>
+									<li class="tag hand" data-time="80">Chapter 2</li>
+									<li class="tag hand" data-time="95">Home Work</li>
 								</ul>
 							</div>
 						</div>
@@ -47,6 +57,12 @@
 				<div class="col-4">
 					<div class="col-12 well">
 						<h3>PDF</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo, voluptatem, excepturi, doloribus tempora quisquam accusamus autem commodi fugit quaerat porro repellat ipsum dignissimos cumque veniam tenetur architecto itaque atque reiciendis.</p>
+					</div>
+				</div>
+				<div class="col-4">
+					<div class="col-12 well">
+						<h3>PowerPoint</h3>
 						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo, voluptatem, excepturi, doloribus tempora quisquam accusamus autem commodi fugit quaerat porro repellat ipsum dignissimos cumque veniam tenetur architecto itaque atque reiciendis.</p>
 					</div>
 				</div>
@@ -67,18 +83,17 @@
 						</div>
 					</div>
 				</div>
-				<div class="col-4">
-					<div class="col-12 well">
-						<h3>PowerPoint</h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo, voluptatem, excepturi, doloribus tempora quisquam accusamus autem commodi fugit quaerat porro repellat ipsum dignissimos cumque veniam tenetur architecto itaque atque reiciendis.</p>
-					</div>
-				</div>
 			</div>
 	</div>
 	<script>
 		var video = document.getElementById("video");
 		var playbtn = document.getElementById("video-play");
 		var bar = document.getElementById("video-bar");
+		var timeCurrent = document.getElementById("video-current-time");
+		var timeTotal = document.getElementById("video-total-time");
+		var expand = document.getElementById("video-expand");
+		var block = document.getElementById("video-block");
+		var tags = document.getElementById("video-tags");
 		
 		playbtn.addEventListener("click", function() {
 			playPause();
@@ -101,23 +116,66 @@
 			updateTimerBar();
 		}, 50);
 		
-		bar.addEventListener("click", function(e) {
+		var barDown = false;
+		bar.addEventListener("mousedown", function(e) {
+			barDown = true;
+			setCurrentTime(e)
+		});
+		function setCurrentTime(e) {
 			var p = e.offsetX / bar.clientWidth * 100;
 			var l = video.duration / 100;
-			video.currentTime = p * l;
+			if (barDown) {
+				video.currentTime = p * l;
+			}
+		}
+		document.addEventListener("mousemove", function(e) {
+			setCurrentTime(e)
 		});
 		
+		document.addEventListener("mouseup", function(e) {
+			barDown = false;
+		});
+		function toTime(sec) {
+			
+			var hours   = Math.floor(sec / 3600);
+			var minutes = Math.floor((sec - (hours * 3600)) / 60);
+			var seconds = sec - (hours * 3600) - (minutes * 60);
+			
+			return hours + "h " + minutes + "m " + parseInt(seconds) + "s";
+		}
 		function updateTimerBar() {
 			var l = video.duration;
 			var c = video.currentTime;
 			var p = c/l * 100;
 			
 			document.getElementById("video-progress-inner").style.width = p+"%";
-			
+			timeCurrent.textContent = toTime(c);
+			timeTotal.textContent = toTime(l);
 			if (p == 100) {
 				playbtn.innerHTML = "<i class='fa fa-refresh fa-fw'></i>";
 			}
 		}
+		
+		expand.addEventListener("click", function(event) {
+			if (block.className == "col-12") {
+				block.className = "col-8";
+				this.innerHTML = "<i class='fa fa-expand fa-fw'></i>"
+			} else {
+				block.className = "col-12";
+				this.innerHTML = "<i class='fa fa-compress fa-fw'></i>"
+			}
+		});
+		
+		tags.addEventListener("click", function(e) {
+			e = e.target;
+			console.log(e);
+			
+			var p = e.getAttribute("data-time");
+			var l = video.duration / 100;
+			video.currentTime = p * l;
+			
+		});
+		
 	
 	</script>
 </body>
