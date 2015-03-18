@@ -7,11 +7,12 @@ video{
 	margin-top: -6px;
 	margin-bottom: 10px;
 	width: 100%;
-	height: 5px;
-	background-color: @dark;
-	
+	height: 10px;
+	background-color: lighten(@dark, 10%);
+	position: relative;
+	z-index: 99999;
 	& .video-progress-inner{
-		height: 5px;
+		height: 10px;
 		background-color: @color;
 	}
 }

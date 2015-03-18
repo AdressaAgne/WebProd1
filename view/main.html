@@ -27,7 +27,7 @@
 						<div class="video">
 							<video id="video" class="hand" src="../video/vid.mp4" preload="true"><div class="video-overlay"></div></video>
 							
-							<div class="video-progress">
+							<div class="video-progress hand" id="video-bar">
 								<div class="video-progress-inner" id="video-progress-inner"></div>
 							</div>
 							<div class="video-controlls">
@@ -78,6 +78,7 @@
 	<script>
 		var video = document.getElementById("video");
 		var playbtn = document.getElementById("video-play");
+		var bar = document.getElementById("video-bar");
 		
 		playbtn.addEventListener("click", function() {
 			playPause();
@@ -100,12 +101,22 @@
 			updateTimerBar();
 		}, 50);
 		
+		bar.addEventListener("click", function(e) {
+			var p = e.offsetX / bar.clientWidth * 100;
+			var l = video.duration / 100;
+			video.currentTime = p * l;
+		});
+		
 		function updateTimerBar() {
 			var l = video.duration;
 			var c = video.currentTime;
 			var p = c/l * 100;
 			
 			document.getElementById("video-progress-inner").style.width = p+"%";
+			
+			if (p == 100) {
+				playbtn.innerHTML = "<i class='fa fa-refresh fa-fw'></i>";
+			}
 		}
 	
 	</script>
