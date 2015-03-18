@@ -29,18 +29,29 @@
 						<div class="right">
 							<label id="video-total-time">00:00</label>
 						</div>
-						<div class="video clearfix">
-							<video id="video" class="hand pause" preload="preload">
-								<source src="../video/vid.mp4" type="video/mp4">
-								<source src="../video/vid.ogg" type="video/ogg">
-							</video>
+					</div>
+					<div class="col-12">
+						
+						<div class="video">
+							<div class="video-wrapper pause" id="video-wrapper">
+								<video id="video" class="hand" preload="preload">
+									<source src="../video/gerardo.mp4" type="video/mp4">
+									<source src="../video/vid.ogg" type="video/ogg">
+								</video>
+							</div>
 							<div class="video-duration">
 								<div class="video-progress hand" id="video-bar">
 									<div class="video-progress-inner" id="video-progress-inner"></div>
+
 								</div>
 							</div>
 							
 							<div class="video-controlls">
+								<select class="btn negative left" id="playbackRate">
+									<option value="0.5">50%</option>
+									<option value="1" selected>100%</option>
+									<option value="2">200%</option>
+								</select>
 								<button class="left negative btn" id="video-play"><i class="fa fa-play fa-fw"></i></button>
 								<button class="left negative btn" id="video-volume">
 									<i class="fa fa-volume-down fa-fw"></i>
@@ -55,11 +66,14 @@
 							</div>
 						</div>
 						<div class="video-tags col-12">
-							<ul class="list-inline" id="video-tags">
-								<li class="tag hand" data-time="10">Lecture Start</li>
-								<li class="tag hand" data-time="40">Chapter 1</li>
-								<li class="tag hand" data-time="80">Chapter 2</li>
-								<li class="tag hand" data-time="95">Home Work</li>
+							<ul class="tags" id="video-tags">
+								<li class="tag hand" data-time="0.57">What is jQuery</li>
+								<li class="tag hand" data-time="16.63">Selectors</li>
+								<li class="tag hand" data-time="33.09">Do Something with Selectors</li>
+								<li class="tag hand" data-time="55.205">Methods</li>
+								<li class="tag hand" data-time="60.50">setTimeout()</li>
+								<li class="tag hand" data-time="64.45">Chaining</li>
+								<li class="tag hand" data-time="80.50">Installing jQuery</li>
 							</ul>
 						</div>
 					</div>
@@ -95,154 +109,6 @@
 				</div>
 			</div>
 	</div>
-	<script>
-		var video = document.getElementById("video");
-		var playbtn = document.getElementById("video-play");
-		var bar = document.getElementById("video-bar");
-		var timeCurrent = document.getElementById("video-current-time");
-		var timeTotal = document.getElementById("video-total-time");
-		var expand = document.getElementById("video-expand");
-		var block = document.getElementById("video-block");
-		var tags = document.getElementById("video-tags");
-		
-		var volume = document.getElementById("video-volume");
-		var volumebar = document.getElementById("video-volume-bar");
-		var volumebari = document.getElementById("video-volume-bar-inner");
-		var volumeDown = false;
-		var currentVol = 100;
-		var mute = false;
-		
-		volume.addEventListener("click", function(event) {
-			if (mute) {
-				setVolume(currentVol);
-				mute = false;
-			} else {
-				setVolume(0);
-				mute = true;
-			}
-		});
-		
-		updateVolumeValueBar();
-		
-		function setVolume(v) {
-			video.volume = v;
-			updateVolumeValueBar();
-		}
-		function updateVolumeValueBar() {
-			var vol = video.volume * 100;
-			volumebari.style.width = vol+"%";
-			
-			if (vol > 89) {
-				volume.innerHTML = "<i class='fa fa-volume-up fa-fw'></i>";
-				currentVol = video.volume;
-			} else if (vol > 0 && vol < 90) {
-				volume.innerHTML = "<i class='fa fa-volume-down fa-fw'></i>";
-				currentVol = video.volume;
-			} else {
-				volume.innerHTML = "<i class='fa fa-volume-off fa-fw'></i>";
-			}
-		}
-		volumebar.addEventListener("mousedown", function(e) {
-			volumeDown = true;
-			setVolume(e.offsetX / volumebar.clientWidth);
-		});
-		
-		document.addEventListener("mousemove", function(e) {
-			if (volumeDown) {
-				setVolume(e.offsetX / volumebar.clientWidth);
-			}
-		});
-		
-		playbtn.addEventListener("click", function() {
-			playPause();
-		});
-		video.addEventListener("click", function() {
-			playPause();
-		});
-		
-		function playPause() {
-			if (video.paused) {
-				video.play();
-				playbtn.innerHTML = "<i class='fa fa-pause fa-fw'></i>";
-			} else {
-				video.pause();
-				playbtn.innerHTML = "<i class='fa fa-play fa-fw'></i>";
-			}
-		}
-		
-		setInterval(function() {
-			updateTimerBar();
-		}, 50);
-		
-		var barDown = false;
-		bar.addEventListener("mousedown", function(e) {
-			barDown = true;
-			setCurrentTime(e)
-		});
-		function setCurrentTime(e) {
-			var p = e.offsetX / bar.clientWidth * 100;
-			var l = video.duration / 100;
-			if (barDown) {
-				video.currentTime = p * l;
-			}
-		}
-		document.addEventListener("mousemove", function(e) {
-			setCurrentTime(e)
-		});
-		
-		document.addEventListener("mouseup", function(e) {
-			barDown = false;
-			volumeDown = false;
-		});
-		function toTime(sec) {
-			
-			var hours = Math.floor(sec / 3600);
-			var minutes = Math.floor((sec - (hours * 3600)) / 60);
-			var seconds = sec - (hours * 3600) - (minutes * 60);
-			
-			return hours + "h " + minutes + "m " + parseInt(seconds) + "s";
-		}
-		function updateTimerBar() {
-			var l = video.duration;
-			var c = video.currentTime;
-			var p = c/l * 100;
-			
-			document.getElementById("video-progress-inner").style.width = p+"%";
-			timeCurrent.textContent = toTime(c);
-			timeTotal.textContent = toTime(l);
-			if (p == 100) {
-				playbtn.innerHTML = "<i class='fa fa-refresh fa-fw'></i>";
-			}
-		}
-		
-		function resize() {
-			if (block.className == "col-12") {
-				block.className = "col-8";
-				expand.innerHTML = "<i class='fa fa-expand fa-fw'></i>"
-			} else {
-				block.className = "col-12";
-				expand.innerHTML = "<i class='fa fa-compress fa-fw'></i>"
-			}
-		}
-		
-		expand.addEventListener("click", function() {
-			resize();
-		});
-		
-		video.addEventListener("dblclick", function() {
-			resize();
-		});
-		
-		tags.addEventListener("click", function(e) {
-			e = e.target;
-
-			
-			var p = e.getAttribute("data-time");
-			var l = video.duration / 100;
-			video.currentTime = p * l;
-			
-		});
-	
-	</script>
+	<script src="../js/min/main-min.js" type="text/javascript"></script>
 </body>
 </html>
