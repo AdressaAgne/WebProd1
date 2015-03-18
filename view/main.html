@@ -12,6 +12,7 @@
 	
 	<!--Main css-->
 	<link rel="stylesheet" href="../css/main.css" />
+	<link rel="stylesheet" href="../css/font-awesome.min.css" />
 </head>
 <body>
 	<div class="container">
@@ -19,39 +20,94 @@
 				<h2>Name of course</h2>
 			</div>
 			
-			<div class="row colorize clearfix">
+			<div class="row">
 				<div class="col-8">
-					<div class="col-12 ">
+					<div class="col-12 well">
 						<h3>Video</h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo, voluptatem, excepturi, doloribus tempora quisquam accusamus autem commodi fugit quaerat porro repellat ipsum dignissimos cumque veniam tenetur architecto itaque atque reiciendis.
-						</p>
+						<div class="video">
+							<video id="video" class="hand" src="../video/vid.mp4" preload="true"><div class="video-overlay"></div></video>
+							
+							<div class="video-progress">
+								<div class="video-progress-inner" id="video-progress-inner"></div>
+							</div>
+							<div class="video-controlls">
+								<button class="btn" id="video-play"><i class="fa fa-play fa-fw"></i></button>
+							</div>
+							<div class="video-tags">
+								<ul class="list-inline">
+									<li class="tag">00:12</li>
+									<li class="tag">00:42</li>
+									<li class="tag">01:02</li>
+									<li class="tag">01:32</li>
+								</ul>
+							</div>
+						</div>
 					</div>
 				</div>
 				<div class="col-4">
-					<div class="col-12 ">
+					<div class="col-12 well">
 						<h3>PDF</h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo, voluptatem, excepturi, doloribus tempora quisquam accusamus autem commodi fugit quaerat porro repellat ipsum dignissimos cumque veniam tenetur architecto itaque atque reiciendis.
-					</p></div>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo, voluptatem, excepturi, doloribus tempora quisquam accusamus autem commodi fugit quaerat porro repellat ipsum dignissimos cumque veniam tenetur architecto itaque atque reiciendis.</p>
+					</div>
 				</div>
 			</div>
-			<div class="row colorize clearfix">
+			
+			<div class="row">
 				<div class="col-8">
-					<div class="col-12 ">
-						<h3>Comments</h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo, voluptatem, excepturi, doloribus tempora quisquam accusamus autem commodi fugit quaerat porro repellat ipsum dignissimos cumque veniam tenetur architecto itaque atque reiciendis.
-					</p></div>
-					<div class="col-12 ">
-						<h3>Wiki</h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo, voluptatem, excepturi, doloribus tempora quisquam accusamus autem commodi fugit quaerat porro repellat ipsum dignissimos cumque veniam tenetur architecto itaque atque reiciendis.
-					</p></div>
+					<div class="col-12">
+						<div class="col-12 well">
+							<h3>Comments</h3>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo, voluptatem, excepturi, doloribus tempora quisquam accusamus autem commodi fugit quaerat porro repellat ipsum dignissimos cumque veniam tenetur architecto itaque atque reiciendis.</p>
+						</div>
+					</div>
+					<div class="col-12">
+						<div class="col-12 well">
+							<h3>Wiki</h3>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo, voluptatem, excepturi, doloribus tempora quisquam accusamus autem commodi fugit quaerat porro repellat ipsum dignissimos cumque veniam tenetur architecto itaque atque reiciendis.</p>
+						</div>
+					</div>
 				</div>
 				<div class="col-4">
-					<div class="col-12 ">
+					<div class="col-12 well">
 						<h3>PowerPoint</h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo, voluptatem, excepturi, doloribus tempora quisquam accusamus autem commodi fugit quaerat porro repellat ipsum dignissimos cumque veniam tenetur architecto itaque atque reiciendis.
-					</p></div>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo, voluptatem, excepturi, doloribus tempora quisquam accusamus autem commodi fugit quaerat porro repellat ipsum dignissimos cumque veniam tenetur architecto itaque atque reiciendis.</p>
+					</div>
 				</div>
 			</div>
 	</div>
+	<script>
+		var video = document.getElementById("video");
+		var playbtn = document.getElementById("video-play");
+		
+		playbtn.addEventListener("click", function() {
+			playPause();
+		});
+		video.addEventListener("click", function() {
+			playPause();
+		});
+		
+		function playPause() {
+			if (video.paused) {
+				video.play();
+				playbtn.innerHTML = "<i class='fa fa-pause fa-fw'></i>";
+			} else {
+				video.pause();
+				playbtn.innerHTML = "<i class='fa fa-play fa-fw'></i>";
+			}
+		}
+		
+		setInterval(function() {
+			updateTimerBar();
+		}, 50);
+		
+		function updateTimerBar() {
+			var l = video.duration;
+			var c = video.currentTime;
+			var p = c/l * 100;
+			
+			document.getElementById("video-progress-inner").style.width = p+"%";
+		}
+	
+	</script>
 </body>
 </html>
