@@ -52,6 +52,26 @@
 		}
 	}
 	
+	&.color{
+		border: 2px solid @color;
+		color: @color;
+		&:hover{
+			color: @light;
+			background-color: @color;
+			text-shadow: 0 1px @dark;
+		}
+	}
+	
+	&.main{
+		border: 2px solid @main;
+		color: @main;
+		&:hover{
+			color: @light;
+			background-color: @main;
+			text-shadow: 0 1px @dark;
+		}
+	}
+	
 	&.warning{
 		border: 2px solid #CC9500;
 		color: #CC9500;
