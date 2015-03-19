@@ -8,7 +8,6 @@ var teacher = {
 	postnr : "8329",
 	postadr : "asdoila",
 	coursesTeacher = [],
-	studie = "",
 	username : "",
 	password : "",
 
