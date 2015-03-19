@@ -1,14 +1,13 @@
-var student = {
-	accessrights : 1,
+var teacher = {
+	accessrights : 3,
 	active : true,
-	idnr : 10,
+	idnr : 12,
 	email : "snerk@snerk.snerk",
 	phonenr : "+4747343090",
 	address : "jklasdljkasd 32"
 	postnr : "8329",
 	postadr : "asdoila",
-	coursesSubscribed = [],
-	studie = "",
+	coursesAdmin = [],
 	username : "",
 	password : "",
 
@@ -30,22 +29,11 @@ var student = {
 	subscribeClass : function(course){
 		return this.coursesSubscribed.push(course);
 	},
-	unsubscribeClass : function(course){
-		if(this.coursesSubscribed > -1){
-			for(var i = 0; i < this.coursesSubscribed.length; i++){
-				if(this.coursesSubscribed[i] == course){
-					this.coursesSubscribed.splice(i, 1) //usikker med splice metoden.. SKJEKK UT SENERE!!!!!!!!11
-					return true;
-				}
-			}			 
-		}
-		return false;
-	},
 	deleteAccount : function(){
-		return this.active = false;
+		return this.activeStudent = false;
 	},
 	activateAccount : function(){
-		return this.active = true;
+		return this.activeStudent = true;
 	},
 	setUsername : function(str){
 		this.username = str;
