@@ -155,10 +155,10 @@ select{
 	}
 
 }
-a.tag:hover{
+.tag:hover{
 	color: @light;
-	background-color: lighten(@dark, 5%);
-	border: 1px solid lighten(@dark, 10%);
+	background-color: darken(@color, 5%);
+	border: 1px solid darken(@color, 10%);
 }
 
 .dialog{
@@ -183,6 +183,14 @@ a.tag:hover{
 	background-color: @dark;
 	border: 1px solid @dark;
 	border-radius: 3px;
+}
+
+.light-well{
+	color: @dark;
+	border: 1px solid darken(@light, 20%);
+	padding: 10px 15px;
+	border-radius: 3px;
+	background-color: darken(@light, 1%);
 }
 
 ul.tags li{
