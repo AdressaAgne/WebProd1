@@ -11,6 +11,7 @@ var teacher = {
 	username : "",
 	password : "",
 
+
 	setEmail : function(str){
 		this.email = str;
 	},
@@ -40,5 +41,19 @@ var teacher = {
 	},
 	setPassword : function(str){
 		this.password = str;
-	}
+	},
+	addCourse : function(course){
+		this.coursesTeacher.push(course);
+	},
+	removeCourse : function(course){
+		if(this.coursesTeacher > -1){
+			for(var i = 0; i < this.coursesTeacher.length; i++){
+				if(this.coursesTeacher[i] == course){
+					this.coursesTeacher.splice(i, 1) //usikker med splice metoden.. SKJEKK UT SENERE!!!!!!!!11
+					return true;
+				}
+			}			 
+		}
+	return false;
+	},
 }// studen class

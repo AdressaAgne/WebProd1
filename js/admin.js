@@ -10,6 +10,8 @@ var teacher = {
 	coursesAdmin = [],
 	username : "",
 	password : "",
+	students : [],
+	teachers : [],
 
 	setEmail : function(str){
 		this.email = str;
@@ -40,5 +42,26 @@ var teacher = {
 	},
 	setPassword : function(str){
 		this.password = str;
+	},
+	addCourse : function(course){
+		this.coursesAdmin.push(course);
+	},
+	removeCourse : function(course){
+		if(this.coursesAdmin > -1){
+			for(var i = 0; i < this.coursesAdmin.length; i++){
+				if(this.coursesAdmin[i] == course){
+					this.coursesAdmin.splice(i, 1) //usikker med splice metoden.. SKJEKK UT SENERE!!!!!!!!11
+					return true;
+				}
+			}			 
+		}
+	return false;
+	},
+	setAccessrights : function(person){
+		for(var i = 0; i < students.length; i++){
+			if(students[i].idnr == person.idnr){
+				
+			}
+		}
 	}
 }// studen class
