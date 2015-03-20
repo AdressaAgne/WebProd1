@@ -1,14 +1,14 @@
 var student = {
 	accessrights : 1,
-	active : true,
-	idnr : 10,
-	email : "snerk@snerk.snerk",
-	phonenr : "+4747343090",
-	address : "jklasdljkasd 32"
-	postnr : "8329",
-	postadr : "asdoila",
-	coursesSubscribed = [],
-	studie = "",
+	active : false,
+	idnr : 1,
+	email : "", //legg til regex
+	phonenr : "",
+	address : "",
+	postnr : "",
+	postadr : "",
+	coursesSubscribed : [],
+	studie : "",
 	username : "",
 	password : "",
 
@@ -34,18 +34,26 @@ var student = {
 		if(this.coursesSubscribed > -1){
 			for(var i = 0; i < this.coursesSubscribed.length; i++){
 				if(this.coursesSubscribed[i] == course){
-					this.coursesSubscribed.splice(i, 1) //usikker med splice metoden.. SKJEKK UT SENERE!!!!!!!!11
+					this.coursesSubscribed.splice(i, 1); //usikker med splice metoden.. SKJEKK UT SENERE!!!!!!!!11
 					return true;
 				}
-			}			 
+			}
 		}
 		return false;
 	},
 	deleteAccount : function(){
-		return this.active = false;
+		if(this.active){
+			this.active = false;
+			return true;
+		}
+		return false;
 	},
 	activateAccount : function(){
-		return this.active = true;
+		if(!this.active){
+			this.active = true;
+			return true;
+		}
+		return false;
 	},
 	setUsername : function(str){
 		this.username = str;
@@ -53,4 +61,4 @@ var student = {
 	setPassword : function(str){
 		this.password = str;
 	}
-}// studen class
+};// student class

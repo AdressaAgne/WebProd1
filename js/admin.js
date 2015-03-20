@@ -1,13 +1,13 @@
 var teacher = {
 	accessrights : 3,
 	active : true,
-	idnr : 12,
-	email : "snerk@snerk.snerk",
-	phonenr : "+4747343090",
-	address : "jklasdljkasd 32"
-	postnr : "8329",
-	postadr : "asdoila",
-	coursesAdmin = [],
+	idnr : 3,
+	email : "",
+	phonenr : "",
+	address : "",
+	postnr : "",
+	postadr : "",
+	coursesAdmin : [],
 	username : "",
 	password : "",
 	students : [],
@@ -31,11 +31,19 @@ var teacher = {
 	subscribeClass : function(course){
 		return this.coursesSubscribed.push(course);
 	},
-	deleteAccount : function(){
-		return this.activeStudent = false;
+	deleteAccount : function(person){
+		if(person.active){
+			person.active = false;
+			return true;
+		}
+		return false;
 	},
-	activateAccount : function(){
-		return this.activeStudent = true;
+	activateAccount : function(person){
+		if(!person.active){
+			person.active = true;
+			return true;
+		}
+		return false;
 	},
 	setUsername : function(str){
 		this.username = str;
@@ -50,18 +58,18 @@ var teacher = {
 		if(this.coursesAdmin > -1){
 			for(var i = 0; i < this.coursesAdmin.length; i++){
 				if(this.coursesAdmin[i] == course){
-					this.coursesAdmin.splice(i, 1) //usikker med splice metoden.. SKJEKK UT SENERE!!!!!!!!11
+					this.coursesAdmin.splice(i, 1); //usikker med splice metoden.. SKJEKK UT SENERE!!!!!!!!11
 					return true;
 				}
-			}			 
+			}
 		}
 	return false;
 	},
 	setAccessrights : function(person){
 		for(var i = 0; i < students.length; i++){
 			if(students[i].idnr == person.idnr){
-				
+
 			}
 		}
 	}
-}// studen class
+};// admin class
