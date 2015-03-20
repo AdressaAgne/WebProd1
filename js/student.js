@@ -2,7 +2,7 @@ var student = {
 	accessrights : 1,
 	active : false,
 	idnr : 1,
-	email : "", //legg til regex
+	email : "",
 	phonenr : "",
 	address : "",
 	postnr : "",
