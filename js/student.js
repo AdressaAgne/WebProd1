@@ -56,7 +56,7 @@ var student = {
 		return this.coursesSubscribed.push(course);
 	},
 	unsubscribeClass : function(course){
-		if(this.coursesSubscribed > -1){
+		if(this.coursesSubscribed.length > 0){
 			for(var i = 0; i < this.coursesSubscribed.length; i++){
 				if(this.coursesSubscribed[i] == course){
 					this.coursesSubscribed.splice(i, 1); //usikker med splice metoden.. SKJEKK UT SENERE!!!!!!!!11

@@ -86,7 +86,7 @@ var teacher = {
 		this.coursesTeacher.push(course);
 	},
 	removeCourse : function(course){
-		if(this.coursesTeacher > -1){
+		if(this.coursesTeacher.length > 0){
 			for(var i = 0; i < this.coursesTeacher.length; i++){
 				if(this.coursesTeacher[i] == course){
 					this.coursesTeacher.splice(i, 1); //usikker med splice metoden.. SKJEKK UT SENERE!!!!!!!!11

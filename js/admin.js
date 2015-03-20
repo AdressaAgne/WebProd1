@@ -88,7 +88,7 @@ var teacher = {
 		this.coursesAdmin.push(course);
 	},
 	removeCourse : function(course){
-		if(this.coursesAdmin > -1){
+		if(this.coursesAdmin.length > 0){
 			for(var i = 0; i < this.coursesAdmin.length; i++){
 				if(this.coursesAdmin[i] == course){
 					this.coursesAdmin.splice(i, 1); //usikker med splice metoden.. SKJEKK UT SENERE!!!!!!!!11
