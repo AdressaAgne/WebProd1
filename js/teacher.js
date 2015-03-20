@@ -29,16 +29,28 @@ var teacher = {
 		return false;
 	},
 	setAdr : function(str){
-		this.address = str;
+		var pattern = /^[a-z0-9 ]+$/i;
+		if(str.match(pattern)){
+			this.address = str;
+			return true;
+		}
+		return false;
 	},
 	setPostnr : function(str){
-		this.postnr = str;
+		var pattern = /^\d{4}$/;
+		if(str.match(pattern)){
+			this.postnr = str;
+			return true;
+		}
+		return false;
 	},
 	setPostadr : function(str){
-		this.postadr = str;
-	},
-	subscribeClass : function(course){
-		return this.coursesSubscribed.push(course);
+		var pattern = /^[a-z]+$/i;
+		if(str.match(pattern)){
+			this.postadr = str;
+			return true;
+		}
+		return false;
 	},
 	deleteAccount : function(){
 		if(this.active){
@@ -55,10 +67,20 @@ var teacher = {
 		return false;
 	},
 	setUsername : function(str){
-		this.username = str;
+		var pattern = /^[a-z0-9]+$/i;
+		if(str.match(pattern)){
+			this.username = str;
+			return true;
+		}
+		return false;
 	},
 	setPassword : function(str){
-		this.password = str;
+		var pattern = /^[a-z0-9]+$/i;
+		if(str.match(pattern)){
+			this.password = str;
+			return true;
+		}
+		return false;
 	},
 	addCourse : function(course){
 		this.coursesTeacher.push(course);

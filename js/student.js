@@ -11,10 +11,10 @@ var student = {
 	studie : "",
 	username : "",
 	password : "",
-
+/* Herregud! sett alle felles metoder for adm,teach,stud i egen fil, og heller send med objektet. */
 	setEmail : function(str){
 		var pattern = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-		if(str.match(pattern)){
+		if(str.match(pattern)){ //evt bruk pattern.test(str); <- antakeligvis bedre
 			this.email = str;
 			return true;
 		}
@@ -29,13 +29,28 @@ var student = {
 		return false;
 	},
 	setAdr : function(str){
-		this.address = str;
+		var pattern = /^[a-z0-9 ]+$/i;
+		if(str.match(pattern)){
+			this.address = str;
+			return true;
+		}
+		return false;
 	},
 	setPostnr : function(str){
-		this.postnr = str;
+		var pattern = /^\d{4}$/;
+		if(str.match(pattern)){
+			this.postnr = str;
+			return true;
+		}
+		return false;
 	},
 	setPostadr : function(str){
-		this.postadr = str;
+		var pattern = /^[a-z]+$/i;
+		if(str.match(pattern)){
+			this.postadr = str;
+			return true;
+		}
+		return false;
 	},
 	subscribeClass : function(course){
 		return this.coursesSubscribed.push(course);
@@ -66,9 +81,19 @@ var student = {
 		return false;
 	},
 	setUsername : function(str){
-		this.username = str;
+		var pattern = /^[a-z0-9]+$/i;
+		if(str.match(pattern)){
+			this.username = str;
+			return true;
+		}
+		return false;
 	},
 	setPassword : function(str){
-		this.password = str;
-	}
+		var pattern = /^[a-z0-9]+$/i;
+		if(str.match(pattern)){
+			this.password = str;
+			return true;
+		}
+		return false;
+	},
 };// student class
