@@ -13,10 +13,20 @@ var teacher = {
 
 
 	setEmail : function(str){
-		this.email = str;
+		var pattern = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+		if(str.match(pattern)){
+			this.email = str;
+			return true;
+		}
+		return false;
 	},
 	setPhonenr : function(str){
-		this.phonenr = str;
+		var pattern = /^\d{3}-?\d{3}-?\d{2}$/g;
+		if(str.match(pattern)){
+			this.phonenr = str;
+			return true;
+		}
+		return false;
 	},
 	setAdr : function(str){
 		this.address = str;
