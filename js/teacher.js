@@ -21,7 +21,7 @@ var teacher = {
 		return false;
 	},
 	setPhonenr : function(str){
-		var pattern = /^\d{3}-?\d{3}-?\d{2}$/g;
+		var pattern = /^\d{8}$/g;
 		if(str.match(pattern)){
 			this.phonenr = str;
 			return true;
