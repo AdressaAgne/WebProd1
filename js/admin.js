@@ -12,6 +12,7 @@ var teacher = {
 	password : "",
 	students : [],
 	teachers : [],
+	allPersons : students.concat(teachers),
 
 	setEmail : function(str){
 		this.email = str;
@@ -65,11 +66,13 @@ var teacher = {
 		}
 	return false;
 	},
-	setAccessrights : function(person){
-		for(var i = 0; i < students.length; i++){
-			if(students[i].idnr == person.idnr){
-
+	setAccessrights : function(person, accessright){
+		for(var i = 0; i < allPersons.length; i++){
+			if(allPersons[i].idnr == person.idnr){
+				allPersons[i].accessrights = accessright;
+				return true;
 			}
 		}
+		return false;
 	}
 };// admin class
