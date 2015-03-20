@@ -75,8 +75,7 @@ var teacher = {
 		return false;
 	},
 	setPassword : function(str){
-		var pattern = /^[a-z0-9]+$/i;
-		if(str.match(pattern)){
+		if(str.length > 7){
 			this.password = str;
 			return true;
 		}
