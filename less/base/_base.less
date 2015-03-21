@@ -17,12 +17,12 @@ body{
 .container{
 	width: 100%;
 	margin: 0 auto;
-	padding: 5px @size * 2;
+	padding: 0px @size * 2;
 }
 .container-big{
 	width: 100%;
 	margin: 0 auto;
-	padding: 5px @size;
+	padding: 0px @size;
 }
 
 .container-fluid{
@@ -81,51 +81,6 @@ a:hover{
 	color: lighten(@color, 5%);
 }
 
-.menu{
-	width: 100%;
-	position: fixed;
-	top: 0px;
-	left: 0px;
-	background-color: @dark;
-	height: 50px;
-	border-bottom: 5px solid lighten(@dark, 5%);
-	z-index: 999999;
-	-moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-	box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-}
-
-.menu ul{
-	font-size: 18px;
-	display: inline-block;
-	
-	& a{
-		display: block;
-	}
-	& li{
-		margin: 0px 2px;
-		display: inline-block;
-		border-radius: 1px;
-
-		&.head{
-			width: 50px;
-			height: 38px;
-			margin-bottom: -14px;
-			background-image: url('../img/avatar/head_13.png');
-			background-size: cover;
-			
-		}
-	}
-}
-
-.menu-fixed{
-	position: fixed;
-	z-index: 99999999;
-	width: 100%;
-	top: 0px;
-	background-color: @color;
-	
-}
-
 .profile-image{
 	border-radius: 50%;
 	width: 200px;
@@ -139,15 +94,13 @@ a:hover{
 
 @media (max-width: 1024px) {
 	.container{
-		padding: 5px @size * 1;
-		font-size: 14px;
+		padding: 0px @size * 1;
 	}
 }
 
 @media (max-width: 768px) {
 	.container, .container-big{
-		padding: 5px 0px;
-		font-size: 12px;
+		padding: 0px 0px;
 	}	
 }
 

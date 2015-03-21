@@ -1,0 +1,152 @@
+.nav-bar {
+  font-size: 16px;
+  background-color: @light;
+  width: 100%;
+  min-height: 50px;
+  border-bottom: 5px solid darken(@light, 10%);
+  padding-bottom: 0px;
+}
+.nav-bar.nav-bar-fixed {
+  z-index: 99999999999;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+}
+.nav-bar.nav-bar-radius {
+  border-radius: 3px;
+}
+.nav-bar.nav-bar-radius.nav-bar-radius-big {
+  border-radius: 5px;
+}
+.nav-bar ul > li {
+  list-style: none;
+
+  display: inline-block;
+  float: left;
+  padding: 12px 0px 15px 0px;
+  margin: 0px;
+}
+.nav-bar ul > li:hover > a {
+  background-color: darken(@light, 10%);
+  color: @dark;
+  border-bottom: 5px solid darken(@light, 20%);
+}
+.nav-bar ul > li.active > a {
+  color: @light;
+  background-color: @color;
+  border-bottom: 5px solid darken(@color, 10%);
+}
+.nav-bar ul > li.logo {
+  padding: 12px 10px 0px;
+}
+.nav-bar ul > li.logo img {
+  height: 32px;
+}
+.nav-bar ul > li > ul {
+  z-index: -1;
+  top: 50px;
+  left: 0;
+  padding-left: @size;
+  width: 100%;
+  display: none;
+  position: absolute;
+  background-color: darken(@light, 10%);
+  color: @dark;
+  border-bottom: 5px solid @light;
+  -webkit-transition: all .3s ease;
+  -moz-transition: all .3s ease;
+  -ms-transition: all .3s ease;
+  transition: all .3s ease;
+}
+.nav-bar ul > li ul > li {
+  display: none;
+  z-index: -1;
+  padding: 12px 0px 15px 0px;
+}
+.nav-bar ul > li ul > li:hover > a {
+  z-index: -1;
+  background-color: darken(@light, 20%);
+  color: @dark;
+  border-bottom: 5px solid darken(@light, 10%);
+}
+.nav-bar ul > li ul > li.active > a:hover {
+  z-index: -1;
+  box-shadow: none;
+  color: @light;
+  background-color: @color;
+  border-bottom: 5px solid darken(@light, 10%);
+}
+.nav-bar ul > li:hover ul > li,
+.nav-bar ul > li:hover ul {
+  top: 53px;
+  display: inline-block;
+}
+.nav-bar ul > li > a {
+  color: @dark;
+  padding: 13px 10px 16px;
+}
+.nav-bar ul > li > a:hover > a {
+  color: @dark;
+}
+.nav-bar ul > li > a:active > a,
+.nav-bar ul > li > a.active > a {
+  color: @light;
+}
+.pull {
+  display: none;
+  position: relative;
+  top: 0px;
+  right: @size;
+  float: right;
+  cursor: pointer;
+  padding: 10px 10px 11px;
+  background-color: darken(@light, 20%);
+  color: @dark;
+  border-bottom: 5px solid darken(@light, 10%);
+  margin-bottom: -5px;
+}
+.pull .bar {
+  width: 25px;
+  height: 3px;
+  margin-bottom: 5px;
+  background-color: @light;
+}
+@media (max-width: 768px) {
+  .nav-bar ul > li {
+    display: none;
+  }
+  .nav-bar ul > li.logo {
+    display: block;
+  }
+  .nav-bar ul > li.drop {
+    display: block;
+    padding: 0px;
+    width: 100%;
+  }
+  .nav-bar ul > li.drop:active,
+  .nav-bar ul > li.drop.active > a,
+  .nav-bar ul > li.drop:hover > a {
+    color: @dark !important;
+    background-color: darken(@light, 10%);
+    border-bottom: none;
+  }
+  .nav-bar ul > li.drop:first-of-type {
+    margin-top: 5px;
+  }
+  .nav-bar ul > li.drop > ul,
+  .nav-bar ul > li.drop ul > li,
+  .nav-bar ul > li.drop.logo {
+    display: none;
+  }
+  .nav-bar ul > li.drop > a {
+    width: 100% !important;
+    display: block;
+    background-color: transparent;
+    border: none;
+    margin: 0px;
+    padding: 10px 10px;
+  }
+  .pull {
+    display: block;
+  }
+}
