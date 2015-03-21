@@ -100,16 +100,16 @@
   float: right;
   cursor: pointer;
   padding: 10px 10px 11px;
-  background-color: darken(@light, 20%);
+  background-color: @color;
   color: @dark;
-  border-bottom: 5px solid darken(@light, 10%);
+  border-bottom: 5px solid darken(@color, 5%);
   margin-bottom: -5px;
 }
 .pull .bar {
   width: 25px;
   height: 3px;
   margin-bottom: 5px;
-  background-color: @light;
+  background-color: lighten(@color, 20%);
 }
 @media (max-width: 768px) {
   .nav-bar ul > li {
@@ -124,12 +124,16 @@
     width: 100%;
   }
   .nav-bar ul > li.drop:active,
-  .nav-bar ul > li.drop.active > a,
-  .nav-bar ul > li.drop:hover > a {
-    color: @dark !important;
-    background-color: darken(@light, 10%);
+  .nav-bar ul > li.drop.active > a{
+    color: @light;
+    background-color: darken(@color, 10%);
     border-bottom: none;
   }
+.nav-bar ul > li.drop:hover > a {
+	color: @dark;
+	background-color: darken(@light, 10%);
+	border-bottom: none;
+}
   .nav-bar ul > li.drop:first-of-type {
     margin-top: 5px;
   }
