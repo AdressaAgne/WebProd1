@@ -96,3 +96,7 @@ var teacher = {
 	return false;
 	},
 };// teacher class
+
+function student(fnavn, enavn, id){
+	this.fnavn = fnavn;
+}
