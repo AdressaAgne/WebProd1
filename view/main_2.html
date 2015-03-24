@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="author" content="Agne Ødegaard" />
+  <meta name="description" content="" />
+  <meta name="application-name" content="Description Here" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta property="fb:admins" content="{YOUR_FACEBOOK_USER_ID}"/>
+  <meta property="fb:app_id" content="{YOUR_APPLICATION_ID}"/>
+
+  <title>IMP - Main View</title>
+
+  <!--Main css-->
+  <link rel="stylesheet" href="../css/main.css" />
+  <link rel="stylesheet" href="../css/font-awesome.min.css" />
+</head>
+<body>
+  <div id="fb-root"></div>
+  <script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&
+    appId={YOUR_APPLICATION_ID}";
+    fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+  </script>
+  <div class="container-big">
+      <div class="page-header">
+        <h2>Programming for Web: Chapter 7, jQuery</h2>
+      </div>
+
+      <div class="row">
+        <div class="col-8" id="video-block">
+          <div class="col-12">
+            <div class="left">
+              <label id="video-current-time">00:00</label>
+            </div>
+            <div class="right">
+              <label id="video-total-time">00:00</label>
+            </div>
+          </div>
+          <div class="col-12">
+            <div class="video">
+              <div class="video-wrapper pause" id="video-wrapper">
+                <video id="video" class="hand" preload="preload">
+                  <source src="../video/gerardo.mp4" type="video/mp4">
+                  <source src="../video/vid.ogg" type="video/ogg">
+                </video>
+              </div>
+              <div class="video-duration">
+                <div class="video-progress hand" id="video-bar">
+                  <div class="video-progress-inner" id="video-progress-inner"></div>
+
+                </div>
+              </div>
+
+              <div class="video-controlls">
+                <select class="btn negative left" id="playbackRate">
+                  <option value="0.5">50%</option>
+                  <option value="1" selected>100%</option>
+                  <option value="2">200%</option>
+                </select>
+                <button class="left negative btn" id="video-play"><i class="fa fa-play fa-fw"></i></button>
+                <button class="left negative btn" id="video-volume">
+                  <i class="fa fa-volume-down fa-fw"></i>
+                </button>
+                <div class="video-volume left">
+                  <div class="video-volume-bar hand" id="video-volume-bar">
+                    <div class="video-volume-bar-inner" id="video-volume-bar-inner"></div>
+                  </div>
+                </div>
+
+                <button class="right negative btn" id="video-expand"><i class="fa fa-expand fa-fw"></i></button>
+              </div>
+            </div>
+            <div class="video-tags col-12">
+              <p>Jump to:</p>
+              <ul class="tags" id="video-tags">
+                <li class="tag hand" data-time="0.57">What is jQuery</li>
+                <li class="tag hand" data-time="16.63">Selectors</li>
+                <li class="tag hand" data-time="33.09">Do Something with Selectors</li>
+                <li class="tag hand" data-time="55.205">Methods</li>
+                <li class="tag hand" data-time="60.50">setTimeout()</li>
+                <li class="tag hand" data-time="64.45">Chaining</li>
+                <li class="tag hand" data-time="80.50">Installing jQuery</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-4" id="pdf">
+          <div class="col-12 light-well">
+            <h3>PDF</h3>
+            <a href="../rawData/jquery.pdf"><img src="../img/jquery.png" alt="" /></a>
+            <p>Download <a href="../rawData/jquery.pdf">Chapter 7, jQuery pdf</a></p>
+          </div>
+        </div>
+        <div class="col-4" id="text">
+          <div class="col-12">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo, voluptatem, excepturi, doloribus tempora quisquam accusamus autem commodi fugit quaerat porro repellat ipsum dignissimos cumque veniam tenetur architecto itaque atque reiciendis.</p>
+
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum, eius, cum, corporis ex deserunt consequuntur dolor quo necessitatibus nulla iste nihil quis. Tempora quibusdam deserunt praesentium facilis deleniti maiores vel?</p>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <h2>Code from lecture</h2>
+          <a class="jsbin-embed" href="https://jsbin.com/zojatapaju/1/embed?js,console">JS Bin</a><script src="https://static.jsbin.com/js/embed.js"></script>
+        </div>
+
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <?PHP
+            $currentlink = $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'];
+            echo "<fb:comments data-href='$currentlink' data-numposts='5'
+            data-colorscheme='light'></fb:comments>";
+          ?>
+        </div>
+      </div>
+
+      <!--<div class="row">
+        <div class="col-8">
+          <div class="col-12">
+            <div class="col-12 well">
+              <h3>Comments</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo, voluptatem, excepturi, doloribus tempora quisquam accusamus autem commodi fugit quaerat porro repellat ipsum dignissimos cumque veniam tenetur architecto itaque atque reiciendis.</p>
+            </div>
+          </div>
+          <div class="col-12">
+            <div class="col-12 well">
+              <h3>Wiki</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo, voluptatem, excepturi, doloribus tempora quisquam accusamus autem commodi fugit quaerat porro repellat ipsum dignissimos cumque veniam tenetur architecto itaque atque reiciendis.</p>
+            </div>
+          </div>
+        </div>
+      </div>-->
+  </div>
+  <script src="../js/min/main-min.js" type="text/javascript"></script>
+</body>
+</html>
