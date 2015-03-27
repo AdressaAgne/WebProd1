@@ -2,17 +2,23 @@ var teacher = {
 	accessrights : 3,
 	active : true,
 	idnr : 3,
+	firstname : "", //skal vi ha middlename?
+	surname : "",
 	email : "",
 	phonenr : "",
 	address : "",
 	postnr : "",
 	postadr : "",
-	coursesAdmin : [],
+	sex : "",
 	username : "",
 	password : "",
-	students : [],
-	teachers : [],
-	allPersons : students.concat(teachers),
+	coursesAdmin : [], //Courses of which the admin also is a teacher in
+
+	/* Not sure of where to store the following arrays.*/
+
+	students : [], //Array of all students
+	teachers : [], //Array of all teachers
+	allPersons : students.concat(teachers),	//Array of all persons (neccesarry?)
 
 	setEmail : function(str){
 		var pattern = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -98,9 +104,9 @@ var teacher = {
 	return false;
 	},
 	setAccessrights : function(person, accessright){
-		for(var i = 0; i < allPersons.length; i++){
-			if(allPersons[i].idnr == person.idnr){
-				allPersons[i].accessrights = accessright;
+		for(var i = 0; i < this.allPersons.length; i++){
+			if(this.allPersons[i].idnr == person.idnr){
+				this.allPersons[i].accessrights = accessright;
 				return true;
 			}
 		}

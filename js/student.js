@@ -2,15 +2,19 @@ var student = {
 	accessrights : 1,
 	active : false,
 	idnr : 1,
+	firstname : "", //skal vi ha middlename?
+	surname : "",
 	email : "",
 	phonenr : "",
 	address : "",
 	postnr : "",
 	postadr : "",
-	coursesSubscribed : [],
-	studie : "",
+	sex : "",
 	username : "",
 	password : "",
+	coursesSubscribed : [],
+	studie : "",
+
 /* Herregud! sett alle felles metoder for adm,teach,stud i egen fil, og heller send med objektet. */
 	setEmail : function(str){
 		var pattern = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
