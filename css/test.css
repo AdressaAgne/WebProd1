@@ -55,3 +55,19 @@
         .tab.active {
             display:block;
         }
+/* Upload */
+
+input[type="file"] {
+    display: none;
+}
+.file-upload {
+    border: 1px solid #ccc;
+    background-color:#FFF
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+    transition:0.1s ease-in-out;
+}
+.file-upload:hover {
+    background-color:#DDD
+}
