@@ -29,7 +29,20 @@
             <div class="page-header">
               <h2>Manage Existing Users</h2>
             </div>
-
+						<div class="col-12">
+							<div class="col-12">
+								<label>Browse users by name</label>
+								<table>
+									<thead>
+										<th><a href="#">A</th></a><th>B</th><th>C</th><th>D</th><th>E</th><th>F</th><th>G</th>
+										<th>H</th><th>I</th><th>J</th><th>K</th><th>L</th><th>M</th><th>N</th>
+										<th>O</th><th>P</th><th>Q</th><th>R</th><th>S</th><th>T</th><th>U</th>
+										<th>V</th><th>W</th><th>X</th><th>Y</th><th>Z</th><th>Æ</th><th>Ø</th>
+										<th>Å</th>
+									</thead>
+								</table>
+							</div>
+						</div>
             <div class="col-4">
               <div class="col-12">
                 <form action="#" method="GET">
@@ -37,22 +50,22 @@
                     <label>Search by name
                       <input class="negative" type="text" name="username" placeholder="Search by name">
                     </label>
-                  </div>
+                  </div><!--
                   <div class="form-element">
                     <label>Browse users
                       <input class="negative" type="text" name="browse" placeholder="Browse users">
                     </label>
-                  </div>
-                  <div class="form-element">
-                    <input class="btn success" type="submit" value="Submit">
-                  </div>
+                  </div>-->
+									<div class="form-element">
+										<input class="btn success" type="submit" value="Submit">
+									</div>
                 </form>
               </div>
             </div>
             <div class="col-3">
               <div class="col-12">
                 <div class="col-12 light-well results" id="searchResults">
-                  <h3>Search results for</h3>
+                  <h3>Search results for "Øyvind"</h3>
                   <ul class="list-stats">
                       <li><label class="hand"><input type="radio" name="result"/> Øyvind Fjes</label></li>
                       <li><label class="hand"><input type="radio" name="result"/> Øyvind heisann</label></li>
@@ -221,7 +234,7 @@
 $(document).ready(function() {
   $('.tabs .tab-links a').on('click', function(e)  {
       var currentAttrValue = $(this).attr('href');
-      $('.tabs ' + currentAttrValue).show().siblings().hide();
+      $('.tabs ' + currentAttrValue).fadeIn(200).siblings().hide();
       $(this).parent('li').addClass('active').siblings().removeClass('active');
 			e.preventDefault();
   });
