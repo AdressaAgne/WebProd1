@@ -17,12 +17,21 @@
 
 <div class="container">
   <div class="tabs">
-      <ul class="tab-links">
-          <li class="active"><a href="#tab1">Manage Existing Users</a></li>
-          <li><a href="#tab2">Add new user</a></li>
-          <li><a href="#tab3">Add users by file</a></li>
-      </ul>
-
+		<div class="col-12">
+			<div class="col-12">
+				<div class="col-12">
+					<div class="col-12">
+						<div class="col-12">
+				      <ul class="tab-links">
+				          <li class="active"><a href="#tab1">Manage Existing Users</a></li>
+				          <li><a href="#tab2">Add new user</a></li>
+				          <li><a href="#tab3">Add users by file</a></li>
+				      </ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
       <div class="tab-content">
         <div id="tab1" class="tab active">
           <div class="col-12">
@@ -101,7 +110,7 @@
             </div>
 						<div class="col-12">
 							<div class="col-12">
-								<!-- BROWSE RESULTS HERE -->
+								<!-- BROWSE RESULTS HERE-->
 							</div>
 						</div>
           </div>
@@ -214,22 +223,29 @@
 
 
 
-          <div id="tab3" class="tab">
+					<div id="tab3" class="tab">
             <div class="col-12">
               <div class="page-header">
-                <h2>Add by file</h2>
+                <h2>Add users by File</h2>
               </div>
-              <div class="col-12">
-                <form action="#" method="GET">
-									<input type="file" name="file" value=""/>
-                  <div class="col-12 align-right">
-                    <div class="form-element">
-                      <input class="btn success" type="submit" value="Submit">
-                    </div>
-                  </div>
-                </form>
-              </div>
-            </div><!-- Col 6 -->
+							<div class="col-12">
+								<form action="#" method="GET">
+								<div class="form-element">
+									<div class="col-12">
+										<div class="align-left col-6">
+											<label for="file-upload" class="file-upload">
+												<i class="fa fa-cloud-upload"></i> Upload users
+											</label>
+											<input id="file-upload" type="file"/>
+										</div>
+										<div class="col-6 align-right">
+											<input class="btn success" type="submit" value="Submit">
+										</div>
+									</div>
+                </div> <!-- Col 6 -->
+							</form>
+              </div> <!-- Col 12 -->
+            </div>
           </div><!-- tab3 -->
       </div><!-- tab-content -->
   </div><!-- tabs -->
@@ -239,7 +255,7 @@
 $(document).ready(function() {
   $('.tabs .tab-links a').on('click', function(e)  {
       var currentAttrValue = $(this).attr('href');
-      $('.tabs ' + currentAttrValue).fadeIn(200).siblings().hide();
+      $('.tabs ' + currentAttrValue).fadeIn(400).siblings().hide();
       $(this).parent('li').addClass('active').siblings().removeClass('active');
 			e.preventDefault();
   });
