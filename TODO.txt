@@ -1,26 +1,38 @@
-courses.html
---
-må være dynamisk til å vise aktuelle fag utifra hvem som vil se siden.
-eks:
-Student vi se påmeldte fag.
-Lærer vil se fag som vedkommende er lærer i.
-admin vil se alle fag.
 -------------------------------------------------------------------------------------------------------------------------
-Manage lectures -> ADD!!!!111
-
--------------------------------------------------------------------------------------------------------------------------
-UPLOAD LECTURE -> ADD!!!!!111
-   -> legg til funksjonalitet som tar hensyn til format (mp4/avi osv)
-Samme går for avspilling i main.html
+Dynamic page where you can see enrolled courses
+example:
+Student wants to see enrolled classes
+Teacher wants to see which classes he/she is teacher in
+Admin will see all classes and courses
 -------------------------------------------------------------------------------------------------------------------------
 
-Change slide at the same time as video changes topic
+add wiki page?
 
 -------------------------------------------------------------------------------------------------------------------------
-Upload Lecture -> ADD!!!!11
--------------------------------------------------------------------------------------------------------------------------
+
+Add format functionality (mp4/avi etc) // if no video -> sound recording?
+same for playback in main.html
 
 -------------------------------------------------------------------------------------------------------------------------
+
+Dynamic slide presentation/video (currentTime)!!!!!!!!!!!!!!!111111111111111111
+
+resource:
+http://www.alishariq.net/alishariq/ERT/Markus/markus.html
+
+-------------------------------------------------------------------------------------------------------------------------
+
+rate lecture / like or dislike
+
+-------------------------------------------------------------------------------------------------------------------------
+
+Comment lecture (registered users/facebook)
+
+-------------------------------------------------------------------------------------------------------------------------
+
+Storage resources:
+http://diveintohtml5.info/storage.html
+http://www.jstorage.info/
 
 -------------------------------------------------------------------------------------------------------------------------
 
