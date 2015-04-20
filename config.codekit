@@ -1,6 +1,6 @@
 {
 "CodeKitInfo": "This is a CodeKit 2.x project configuration file. It is designed to sync project settings across multiple machines. MODIFYING THE CONTENTS OF THIS FILE IS A POOR LIFE DECISION. If you do so, you will likely cause CodeKit to crash. This file is not useful unless accompanied by the project that created it in CodeKit 2. This file is not backwards-compatible with CodeKit 1.x. For more information, see: http:\/\/incident57.com\/codekit",
-"creatorBuild": "18493",
+"creatorBuild": "17682",
 "files": {
 	"\/css\/font-awesome.min.css": {
 		"fileType": 16,
@@ -20,6 +20,26 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+	"\/css\/test.css": {
+		"fileType": 16,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/css\/test.css",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/img\/404.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 27850,
+		"inputAbbreviatedPath": "\/img\/404.jpg",
+		"outputAbbreviatedPath": "\/img\/404.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 1
+		},
 	"\/img\/face.png": {
 		"fileType": 32768,
 		"ignore": 0,
@@ -29,7 +49,7 @@
 		"outputAbbreviatedPath": "\/img\/face.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"processed": 0
+		"processed": 1
 		},
 	"\/img\/jquery.png": {
 		"fileType": 32768,
@@ -40,7 +60,7 @@
 		"outputAbbreviatedPath": "\/img\/jquery.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"processed": 0
+		"processed": 1
 		},
 	"\/img\/logo.png": {
 		"fileType": 32768,
@@ -51,7 +71,7 @@
 		"outputAbbreviatedPath": "\/img\/logo.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"processed": 0
+		"processed": 1
 		},
 	"\/img\/pdf\/1.png": {
 		"fileType": 32768,
@@ -139,7 +159,7 @@
 		"outputAbbreviatedPath": "\/img\/wallpaper.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"processed": 0
+		"processed": 1
 		},
 	"\/index.html": {
 		"fileType": 8192,
@@ -183,6 +203,17 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 0
 		},
+	"\/js\/min\/admin-min.js": {
+		"fileType": 64,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/js\/min\/admin-min.js",
+		"outputAbbreviatedPath": "\/js\/min\/min\/admin-min-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
 	"\/js\/min\/main-min.js": {
 		"fileType": 64,
 		"ignore": 1,
@@ -200,6 +231,28 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/js\/min\/menu-min.js",
 		"outputAbbreviatedPath": "\/js\/min\/min\/menu-min-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/js\/min\/student-min.js": {
+		"fileType": 64,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/js\/min\/student-min.js",
+		"outputAbbreviatedPath": "\/js\/min\/min\/student-min-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/js\/min\/teacher-min.js": {
+		"fileType": 64,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/js\/min\/teacher-min.js",
+		"outputAbbreviatedPath": "\/js\/min\/min\/teacher-min-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
@@ -559,6 +612,15 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+	"\/view\/404.html": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/view\/404.html",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
 	"\/view\/admin_main.html": {
 		"fileType": 8192,
 		"ignore": 0,
@@ -595,11 +657,29 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+	"\/view\/loginTest.html": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/view\/loginTest.html",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
 	"\/view\/main.html": {
 		"fileType": 8192,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/view\/main.html",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/view\/main_2.html": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/view\/main_2.html",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
@@ -657,11 +737,29 @@
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
+		},
+	"\/view\/test.html": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/view\/test.html",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/view\/upload_lecture.html": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/view\/upload_lecture.html",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
 		}
 	},
 "hooks": [
 	],
-"lastSavedByUser": "Agne Ødegaard",
+"lastSavedByUser": "Øyvind",
 "manualImportLinks": {
 	},
 "projectAttributes": {
@@ -707,10 +805,6 @@
 			},
 		"empty_constructor_needs_parens": {
 			"active": 0,
-			"flagValue": -1
-			},
-		"ensure_comprehensions": {
-			"active": 1,
 			"flagValue": -1
 			},
 		"indentation": {
@@ -797,16 +891,8 @@
 			"active": 0,
 			"flagValue": -1
 			},
-		"prefer_english_operator": {
-			"active": 0,
-			"flagValue": -1
-			},
 		"space_operators": {
 			"active": 0,
-			"flagValue": -1
-			},
-		"spacing_after_comma": {
-			"active": 1,
 			"flagValue": -1
 			}
 		},
@@ -864,10 +950,6 @@
 			"active": 1,
 			"flagValue": -1
 			},
-		"browserify": {
-			"active": 0,
-			"flagValue": -1
-			},
 		"camelcase": {
 			"active": 0,
 			"flagValue": -1
@@ -890,10 +972,6 @@
 			},
 		"dojo": {
 			"active": 0,
-			"flagValue": -1
-			},
-		"elision": {
-			"active": 1,
 			"flagValue": -1
 			},
 		"eqeqeq": {
@@ -948,10 +1026,6 @@
 			"active": 0,
 			"flagValue": -1
 			},
-		"jasmine": {
-			"active": 0,
-			"flagValue": -1
-			},
 		"jquery": {
 			"active": 1,
 			"flagValue": -1
@@ -995,10 +1069,6 @@
 		"maxstatements": {
 			"active": 0,
 			"flagValue": 4
-			},
-		"mocha": {
-			"active": 0,
-			"flagValue": -1
 			},
 		"mootools": {
 			"active": 0,
@@ -1068,10 +1138,6 @@
 			"active": 0,
 			"flagValue": -1
 			},
-		"qunit": {
-			"active": 0,
-			"flagValue": -1
-			},
 		"regexp": {
 			"active": 1,
 			"flagValue": -1
@@ -1089,10 +1155,6 @@
 			"flagValue": -1
 			},
 		"shelljs": {
-			"active": 0,
-			"flagValue": -1
-			},
-		"singleGroups": {
 			"active": 0,
 			"flagValue": -1
 			},
@@ -1296,7 +1358,6 @@
 	"slimAutoOutputPathStyle": 0,
 	"slimCompileOnly": 0,
 	"slimLogicless": 0,
-	"slimOutputFormat": 0,
 	"slimOutputStyle": 1,
 	"slimRailsCompatible": 0,
 	"stylusAutoOutputPathEnabled": 1,
@@ -1305,7 +1366,6 @@
 	"stylusAutoOutputPathReplace1": "stylus",
 	"stylusAutoOutputPathReplace2": "css",
 	"stylusAutoOutputPathStyle": 2,
-	"stylusCreateSourceMap": 0,
 	"stylusDebugStyle": 0,
 	"stylusImportCSS": 0,
 	"stylusOutputStyle": 0,
@@ -1321,9 +1381,8 @@
 	"typescriptMinifyOutput": 0,
 	"typescriptModuleType": 0,
 	"typescriptNoImplicitAny": 0,
-	"typescriptPreserveConstEnums": 0,
+	"typescriptNoResolve": 0,
 	"typescriptRemoveComments": 0,
-	"typescriptSuppressImplicitAnyIndexErrors": 0,
 	"typescriptTargetECMAVersion": 0,
 	"uglifyDefinesString": "",
 	"uglifyFlags2": {
@@ -1360,10 +1419,6 @@
 			"flagValue": -1
 			},
 		"dead_code": {
-			"active": 0,
-			"flagValue": -1
-			},
-		"drop_console": {
 			"active": 0,
 			"flagValue": -1
 			},
@@ -1407,10 +1462,6 @@
 			"active": 1,
 			"flagValue": -1
 			},
-		"keep_fargs": {
-			"active": 0,
-			"flagValue": -1
-			},
 		"loops": {
 			"active": 1,
 			"flagValue": -1
@@ -1423,16 +1474,8 @@
 			"active": 1,
 			"flagValue": 32000
 			},
-		"negate_iife": {
-			"active": 1,
-			"flagValue": -1
-			},
 		"properties": {
 			"active": 1,
-			"flagValue": -1
-			},
-		"pure_getters": {
-			"active": 0,
 			"flagValue": -1
 			},
 		"quote-keys": {
