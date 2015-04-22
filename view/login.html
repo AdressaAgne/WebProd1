@@ -54,19 +54,25 @@
 					<input type="submit" id="submit" class="btn negative" name="" value="Login" />
 					<label><span id="forgotpassword">Forgot Password?</span></label>
 				</div>
+			</form>
 				<!-- FORGOT PASSWORD -->
 				<div class="forgotpasswordmenu" style="display: none;">
-					<div class="form-element">
-						<label>Enter your email
-							<input id="emailVal" type="text" class="negative" name="" value="" placeholder="name@example.com" />
-						</label>
-					</div>
-					<div class="form-element">
-						<input type="submit" id="forgotpwd" class="btn negative" name="" value="Send me validation email" />
-					</div>
-
+						<div class="form-element">
+							<label>Enter your email
+								<input id="emailVal" type="text" class="negative" name="" value="" placeholder="name@example.com" />
+							</label>
+						</div>
+						<div class="form-element">
+							<input type="submit" id="forgotpwd" class="btn negative" name="" value="Send me validation email" />
+						</div>
 				</div>
-			</form>
+
+
+				<!-- success div -->
+				<div class="col-12" id="postvalidation" style="display: none;">
+					<p>Successfully sent email to: <span id="useremail"></span></p>
+				</div>
+
 		</div>
 	</div>
 	<script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
@@ -86,7 +92,20 @@
 
 	});
 
+	/* Email validation */
 
+	document.getElementById("forgotpwd").addEventListener("click", function(e){
+		var email = document.getElementById("emailVal").value;
+
+		if(validateEmail(email)){
+				$('#postvalidation').show();
+				document.getElementById("useremail").innerHTML = email;
+		}else{
+			//e.preventDefault();
+		}
+	});
+
+/************************** Functions *********************************/
 	function validateUsername(str){
 		var trueValue = "student";
 		if(str.match(trueValue)){
@@ -102,6 +121,12 @@
 		return false;
 	}
 
+	function validateEmail(str){ /* worlds simplest email validation lol */
+		if(str.length > 0){
+			return true;
+		}
+		return false;
+	}
 
 	/* Forgotpassword */
 
