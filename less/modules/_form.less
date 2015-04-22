@@ -1,6 +1,6 @@
 @textbox-size: 6px;
 
-[type='text'], [type='password'], [type='email'], [type='search'], select, textarea{
+[type='text'], [type='password'], [type='email'], [type='search'], select, textarea, button{
 	font-family: 'open sans', sans-serif;
 	padding: @textbox-size @textbox-size*1.5;
 	margin: 2px;
@@ -119,7 +119,40 @@
 		}
 	}
 }
-
+button.search{
+	width: 28px;
+	height: 28px;
+	margin: -20px 75px -20px 0px;
+	position: relative;
+	-webkit-transition: all .3s linear;
+	-moz-transition: all .3s linear;
+	-ms-transition: all .3s linear;
+	-o-transition: all .3s linear;
+	transition: all .3s linear;
+	&:focus{
+		width: 150px;
+		margin: -20px 0px;
+	}
+	&:before{
+		content: '';
+		display: block;
+		top:20px;
+		right: -5px;
+		height: 15px;
+		width: 3px;
+		position: absolute;
+		background-color: @dark;
+		-webkit-transform: rotateZ(-45deg);
+		-webkit-transition: all .3s linear;
+		-moz-transition: all .3s linear;
+		-ms-transition: all .3s linear;
+		-o-transition: all .3s linear;
+		transition: all .3s linear;
+	}
+	&:focus:after{
+		height: 0px;
+	}
+}
 .disabled{
 	opacity: .4;
 }
@@ -139,7 +172,7 @@ select{
 	margin-bottom: -2px;
 }
 
-[type='search']{
+[type='search'], button.search{
 	border-radius: 100px;
 }
 .tag{

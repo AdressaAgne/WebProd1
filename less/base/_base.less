@@ -32,8 +32,56 @@ body{
 #svg-dott, #svg-d{
 	fill: #3c6ab3;
 	-webkit-animation: dottd 3s linear running;
+	-moz-animation: dottd 3s linear running;
+	-ms-animation: dottd 3s linear running;
+	-o-animation: dottd 3s linear running;
+	animation: dottd 3s linear running;
 }
 @-webkit-keyframes dottd {
+	0%{
+		fill-opacity: 0;
+	}
+	85% {
+		fill-opacity: 0;
+	}
+	100% {
+		fill-opacity: 1;
+	}
+}
+@-moz-keyframes dottd {
+	0%{
+		fill-opacity: 0;
+	}
+	85% {
+		fill-opacity: 0;
+	}
+	100% {
+		fill-opacity: 1;
+	}
+}
+@-ms-keyframes dottd {
+	0%{
+		fill-opacity: 0;
+	}
+	85% {
+		fill-opacity: 0;
+	}
+	100% {
+		fill-opacity: 1;
+	}
+}
+@-o-keyframes dottd {
+	0%{
+		fill-opacity: 0;
+	}
+	85% {
+		fill-opacity: 0;
+	}
+	100% {
+		fill-opacity: 1;
+	}
+}
+@keyframes dottd {
 	0%{
 		fill-opacity: 0;
 	}
@@ -50,8 +98,80 @@ body{
 	stroke-dashoffset: 1000;
 	stroke: #222222;
 	-webkit-animation: imp 3s linear running;
+	-moz-animation: imp 3s linear running;
+	-ms-animation: imp 3s linear running;
+	-o-animation: imp 3s linear running;
+	animation: imp 3s linear running;
 }
 @-webkit-keyframes imp {
+	0% {
+		fill-opacity: 0;
+		stroke-dashoffset: 1000;
+		stroke-opacity: 1;
+	}
+	85% {
+		fill-opacity: 0;
+		stroke-opacity: 1;
+		stroke-dashoffset: 0;
+	}
+	100%{
+		fill-opacity: 1;
+		stroke-opacity: 0;
+		stroke-dashoffset: 0;
+	}
+}
+@-moz-keyframes imp {
+	0% {
+		fill-opacity: 0;
+		stroke-dashoffset: 1000;
+		stroke-opacity: 1;
+	}
+	85% {
+		fill-opacity: 0;
+		stroke-opacity: 1;
+		stroke-dashoffset: 0;
+	}
+	100%{
+		fill-opacity: 1;
+		stroke-opacity: 0;
+		stroke-dashoffset: 0;
+	}
+}
+@-ms-keyframes imp {
+	0% {
+		fill-opacity: 0;
+		stroke-dashoffset: 1000;
+		stroke-opacity: 1;
+	}
+	85% {
+		fill-opacity: 0;
+		stroke-opacity: 1;
+		stroke-dashoffset: 0;
+	}
+	100%{
+		fill-opacity: 1;
+		stroke-opacity: 0;
+		stroke-dashoffset: 0;
+	}
+}
+@-o-keyframes imp {
+	0% {
+		fill-opacity: 0;
+		stroke-dashoffset: 1000;
+		stroke-opacity: 1;
+	}
+	85% {
+		fill-opacity: 0;
+		stroke-opacity: 1;
+		stroke-dashoffset: 0;
+	}
+	100%{
+		fill-opacity: 1;
+		stroke-opacity: 0;
+		stroke-dashoffset: 0;
+	}
+}
+@keyframes imp {
 	0% {
 		fill-opacity: 0;
 		stroke-dashoffset: 1000;
@@ -91,22 +211,6 @@ body{
 		-moz-box-shadow: -1px 0 rgba(0, 0, 0, @active-shadow), 1px 0 rgba(0, 0, 0, @active-shadow);
 		box-shadow: -1px 0 rgba(0, 0, 0, @active-shadow), 1px 0 rgba(0, 0, 0, @active-shadow);
 	}
-}
-
-@-moz-keyframes logoAnim {
-  0%   { opacity: 0; }
-  100% { opacity: 1; }
-}
-@-o-keyframes logoAnim {
-  0%   { opacity: 0; }
-  100% { opacity: 1; }
-}
-@keyframes logoAnim {
-  0%   { transform-origin-y: 0deg; }
-  100% { transform-origin-y: 90deg; }
-}
-.login-well{
-	/*background-color: rgba(0, 0, 0, .5);*/
 }
 h4.list-stats{
 	margin-left: 20px;
