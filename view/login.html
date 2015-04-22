@@ -20,24 +20,57 @@
 			<div class="col-6 col-offset-3 align-center">
 				<img src="../img/logo.png" alt="" />
 			</div>
-			<form method="post" action="">
+			<form method="post" action="../index.html">
 				<div class="form-element">
 					<label>Username
-						<input type="text" class="negative" name="" value="" placeholder="Username"/>
+						<input id="username" type="text" class="negative" name="" value="" placeholder="Username"/>
 					</label>
 				</div>
 				<div class="form-element">
 					<label>Password
-						<input type="password" class="negative" name="" value="" placeholder="Password" />
+						<input id="password" type="password" class="negative" name="" value="" placeholder="Password" />
 					</label>
 				</div>
 				<div class="form-element">
-					<input type="submit" class="btn negative" name="" value="Login" />
+					<input type="submit" id="submit" class="btn negative" name="" value="Login" />
 					<label><a href="#">Forgot Password?</a></label>
 				</div>
 			</form>
 		</div>
 	</div>
+	<script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+
+<script>
+
+
+	document.getElementById('submit').addEventListener("click", function(e) {
+		var username = document.getElementById("username").value;
+		var password = document.getElementById("password").value;
+
+		if(validateUsername(username) && validatePassword(password)){
+			//login
+		}else{
+			e.preventDefault();
+		}
+
+	});
+
+
+	function validateUsername(str){
+		var trueValue = "student";
+		if(str.match(trueValue)){
+			return true;
+		}
+		return false;
+	}
+	function validatePassword(str){
+		var trueValue = "password";
+		if(str.match(trueValue)){
+			return true;
+		}
+		return false;
+	}
+</script>
 
 </body>
 </html>
