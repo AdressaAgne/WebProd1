@@ -9,6 +9,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Ttitle</title>
+  <style>
+  .mydiv {
+  display:none;
+}
+  </style>
 
   <!--Main css-->
   <link rel="stylesheet" href="../css/main.css" />
@@ -42,6 +47,86 @@
             </select>
           </label>
         </div>
+
+<div class="row">
+  <div class="col-12">
+    <!--Video -->
+    <a class="display" role="button">Upload Video</a>
+
+    <div class="form-element mydiv">
+      <label for="videopresentation">Upload video presentation</label>
+      <button id="videopresentation" class="btn color">Upload Video</button>
+      <div class="content">
+
+      </div>
+    </div>
+  </div><!--col-->
+
+    <!-- PDF -->
+    <div class="col-12">
+    <a class="display" role="button">Upload PDF</a>
+
+    <div class="form-element mydiv">
+      <label for="videopresentation">Upload video presentation</label>
+      <button id="videopresentation" class="btn color">Upload Video</button>
+      <div class="content">
+
+      </div>
+    </div>
+  </div>
+    <!-- PPT -->
+    <div class="col-12">
+    <a class="display" role="button">Upload PowerPoint</a>
+
+    <div class="form-element mydiv">
+      <label for="videopresentation">Upload video presentation</label>
+      <button id="videopresentation" class="btn color">Upload Video</button>
+      <div class="content">
+
+      </div>
+    </div>
+  </div>
+</div><!--row-->
+
+
+
+
+
+
+
+<!--
+
+        <div class="row">
+          <div class="col-12">
+            <div class="form-element">
+              <label for="videopresentation">Upload video presentation</label>
+              <button id="videopresentation" class="btn color">Upload Video</button>
+              <div class="content" style="display: none;">
+  asdasd
+              </div>
+            </div>
+
+            <div class="form-element">
+              <label for="pdf">Upload video presentation</label>
+              <button id="pdf" class="btn color">Upload Video</button>
+
+            </div>
+            <div class="content" style="display: none;">
+asdasd
+            </div>
+            <div class="form-element">
+              <label for="powerpoint">Upload video presentation</label>
+              <button id="powerpoint" class="btn color">Upload Video</button>
+
+            </div>
+            <div class="content" style="display: none;">
+asdasd
+            </div>
+          </div>
+        </div>
+-->
+        <!-- OLD BUTTONS -->
+<!--
           <div class="form-element">
             <label for="videopresentation">Upload video presentation</label><br>
               <input type="file" class="negative" name="videopresentation" value=""/>
@@ -62,13 +147,29 @@
             <label for="js">Upload JS</label><br>
               <input type="file" class="negative" name="js" value=""/>
           </div>
+-->
+<!-- OLD BUTTONS -->
 
+
+
+          <!-- Submit -->
           <div class="form-element">
-            <div class="align-right"><input type="submit" class="btn negative" name="" value="Submit" /></div>
+            <div class="align-left"><input type="submit" class="btn negative" name="" value="Submit" /></div>
           </div>
         </form>
       </div>
     </div>
   </div>
+  <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+  <script>
+
+  $(function() {
+    $(".display").click(function() {
+      $(this).next(".mydiv").slideToggle();
+    });
+  });
+
+
+  </script>
 </body>
 </html>
