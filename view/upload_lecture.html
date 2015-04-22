@@ -13,6 +13,12 @@
   .mydiv {
     display:none;
   }
+  legend {
+      display: block;
+      padding-left: 2px;
+      padding-right: 2px;
+      border: none;
+  }
   </style>
 
   <!--Main css-->
@@ -20,7 +26,8 @@
 </head>
 
   <div class="container">
-    <div class="col-6 col-offset-3">
+     <div class="col-6 col-offset-3">
+    <!--<div class="col-12">-->
       <div class="page-header">
         <h2>Upload Lecture</h2>
       </div>
@@ -113,9 +120,34 @@
 
 <!-- End PPT -->
 
+<!-- Details and keywords -->
+<div class="col-12">
 
-
-
+    <div class="col-12">
+      </div>
+      <div class="form-element">
+        <fieldset>
+          <legend>Keywords/Details</legend>
+          <div class="form-element">
+            <div class="col-3">
+              <input type="text" placeholder="amount of keywords" class="negative">
+            </div>
+          </div>
+          <!--<div class="form-element">-->
+            <div class="col-3">
+              <input type="button" value="Add keywords" class="btn color" style="margin-top:-12px;"/><br>
+            </div>
+            <div class="col-6">
+              <!-- Empty div -->
+            </div>
+          <!--</div>-->
+          <div class="col-4">Keyword<input type="text" class="negative"></div>
+          <div class="col-3">Video time<input type="text" class="negative"></div>
+          <div class="col-3">PDF page nr:<input type="text" class="negative"></div>
+          <div class="col-2">Slide nr<input type="text" class="negative"></div>
+        </fieldset>
+      </div>
+    </div>
 
 
 <!--
