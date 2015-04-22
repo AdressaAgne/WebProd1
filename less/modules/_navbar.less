@@ -1,10 +1,15 @@
+@var-gradient: 7%;
 .nav-bar {
   font-size: 16px;
-  background-color: @light;
-  width: 100%;
+	background: -webkit-linear-gradient(top, @light 0%, darken(@light, @var-gradient) 100%) @light;
+	background: -moz-linear-gradient(top, @light 0%, darken(@light, @var-gradient) 100%) @light;
+	background: -ms-linear-gradient(top, @light 0%, darken(@light, @var-gradient) 100%) @light;
+	background: linear-gradient(to bottom, @light 0%, darken(@light, @var-gradient) 100%) @light;
+	width: 100%;
   min-height: 50px;
-  border-bottom: 5px solid darken(@light, 10%);
+  border-bottom: 5px solid darken(@light, 20%);
   padding-bottom: 0px;
+  
 }
 .nav-bar.nav-bar-fixed {
   z-index: 99999999999;
@@ -25,16 +30,29 @@
   float: left;
   padding: 12px 0px 15px 0px;
   margin: 0px;
+  &.right{
+  	float: right;
+  }
 }
 .nav-bar ul > li:hover > a {
-  background-color: darken(@light, 10%);
+  background: -webkit-linear-gradient(top, darken(@light, @var-gradient) 0%, darken(@light, @var-gradient*2) 100%) @light;
+  background: -moz-linear-gradient(top, darken(@light, @var-gradient) 0%, darken(@light, @var-gradient*2) 100%) @light;
+  background: -ms-linear-gradient(top, darken(@light, @var-gradient) 0%, darken(@light, @var-gradient*2) 100%) @light;
+  background: linear-gradient(to bottom, darken(@light, @var-gradient) 0%, darken(@light, @var-gradient*2) 100%) @light;
   color: @dark;
-  border-bottom: 5px solid darken(@light, 20%);
+  border-bottom: 5px solid darken(@light, 30%);
 }
+@active-shadow: .2;
 .nav-bar ul > li.active > a {
   color: @light;
   background-color: @color;
-  border-bottom: 5px solid darken(@color, 10%);
+  border-bottom: 5px solid darken(@color, 20%);
+  background: -webkit-linear-gradient(top, @color 0%, darken(@color, 10%) 100%);
+  background: -moz-linear-gradient(top, @color 0%, darken(@color, 10%) 100%);
+  background: -ms-linear-gradient(top, @color 0%, darken(@color, 10%) 100%);
+  background: linear-gradient(to bottom, @color 0%, darken(@color, 10%) 100%);
+	-moz-box-shadow: -1px 0 rgba(0, 0, 0, @active-shadow), 1px 0 rgba(0, 0, 0, @active-shadow);
+	box-shadow: -1px 0 rgba(0, 0, 0, @active-shadow), 1px 0 rgba(0, 0, 0, @active-shadow);
 }
 .nav-bar ul > li.logo {
   padding: 12px 10px 0px;
@@ -102,14 +120,22 @@
   padding: 10px 10px 11px;
   background-color: @color;
   color: @dark;
-  border-bottom: 5px solid darken(@color, 5%);
+  border-bottom: 5px solid darken(@color, 20%);
   margin-bottom: -5px;
+  background: -webkit-linear-gradient(top, @color 0%, darken(@color, 10%) 100%);
+  background: -moz-linear-gradient(top, @color 0%, darken(@color, 10%) 100%);
+  background: -ms-linear-gradient(top, @color 0%, darken(@color, 10%) 100%);
+  background: linear-gradient(to bottom, @color 0%, darken(@color, 10%) 100%);
+  	-moz-box-shadow: -1px 0 rgba(0, 0, 0, @active-shadow), 1px 0 rgba(0, 0, 0, @active-shadow);
+  	box-shadow: -1px 0 rgba(0, 0, 0, @active-shadow), 1px 0 rgba(0, 0, 0, @active-shadow);
 }
 .pull .bar {
   width: 25px;
   height: 3px;
   margin-bottom: 5px;
-  background-color: lighten(@color, 20%);
+  background-color: lighten(@color, 5%);
+	-moz-box-shadow: 0 -1px 0 lighten(@color, 10%),0 1px 0 darken(@color, 10%);
+	box-shadow: 0 -1px 0 lighten(@color, 10%), 0 1px 0 darken(@color, 10%);
 }
 @media (max-width: 768px) {
   .nav-bar ul > li {
@@ -134,6 +160,7 @@
 	background-color: darken(@light, 10%);
 	border-bottom: none;
 }
+
   .nav-bar ul > li.drop:first-of-type {
     margin-top: 5px;
   }
