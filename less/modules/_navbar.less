@@ -157,14 +157,18 @@
   	-moz-box-shadow: -1px 0 rgba(0, 0, 0, @active-shadow), 1px 0 rgba(0, 0, 0, @active-shadow);
   	box-shadow: -1px 0 rgba(0, 0, 0, @active-shadow), 1px 0 rgba(0, 0, 0, @active-shadow);
 }
-.pull .bar {
+.bar, .bar:before, .bar:after {
   width: 25px;
   height: 3px;
   margin-bottom: 5px;
   background-color: lighten(@color, 5%);
 	-moz-box-shadow: 0 -1px 0 lighten(@color, 10%),0 1px 0 darken(@color, 10%);
 	box-shadow: 0 -1px 0 lighten(@color, 10%), 0 1px 0 darken(@color, 10%);
+	position: absolute;
+	 display: block;
+	 content: '';
 }
+
 @media (max-width: 768px) {
   .nav-bar ul > li {
     display: none;

@@ -29,6 +29,45 @@ body{
 	width: 100%;
 	margin: 0 auto;
 }
+#svg-dott, #svg-d{
+	fill: #3c6ab3;
+	-webkit-animation: dottd 3s linear running;
+}
+@-webkit-keyframes dottd {
+	0%{
+		fill-opacity: 0;
+	}
+	85% {
+		fill-opacity: 0;
+	}
+	100% {
+		fill-opacity: 1;
+	}
+}
+#svg-imp{
+	fill: #222222;
+	stroke-dasharray: 1000;
+	stroke-dashoffset: 1000;
+	stroke: #222222;
+	-webkit-animation: imp 3s linear running;
+}
+@-webkit-keyframes imp {
+	0% {
+		fill-opacity: 0;
+		stroke-dashoffset: 1000;
+		stroke-opacity: 1;
+	}
+	85% {
+		fill-opacity: 0;
+		stroke-opacity: 1;
+		stroke-dashoffset: 0;
+	}
+	100%{
+		fill-opacity: 1;
+		stroke-opacity: 0;
+		stroke-dashoffset: 0;
+	}
+}
 .login-fill{
 	background-color: darken(@light, 3.5);
 	border-radius: 3px;
@@ -45,28 +84,15 @@ body{
 		left: 30px;
 		height: 0px;
 		border-bottom: @flip-size solid rgba(0, 0, 0, 0);
-		border-left: @flip-size solid darken(@color, 20%);
-		border-right: @flip-size solid darken(@color, 20%);
-		border-top: 50px solid darken(@color, 20%);
+		border-left: @flip-size solid @color;
+		border-right: @flip-size solid @color;
+		border-top: 50px solid @color;
 		position: absolute;
 		-moz-box-shadow: -1px 0 rgba(0, 0, 0, @active-shadow), 1px 0 rgba(0, 0, 0, @active-shadow);
 		box-shadow: -1px 0 rgba(0, 0, 0, @active-shadow), 1px 0 rgba(0, 0, 0, @active-shadow);
 	}
 }
-#logo-svg{
-	-webkit-animation: logoAnim 2s ease-in-out 0s;
-	-moz-animation: logoAnim 1s ease-in-out 0s;
-	-ms-animation: logoAnim 1s ease-in-out 0s;
-	animation: logoAnim 1s ease-in-out 0s;
-	
-	-webkit-transform-origin: 100% 0%;
-}
-@-webkit-keyframes logoAnim {
-  0%   {
-  	-webkit-transform: rotateX(90deg);
-  }
-  100% { -webkit-transform: rotateX(0deg);}
-}
+
 @-moz-keyframes logoAnim {
   0%   { opacity: 0; }
   100% { opacity: 1; }
