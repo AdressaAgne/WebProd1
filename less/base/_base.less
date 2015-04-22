@@ -11,7 +11,7 @@ body{
 	font-family: 'open sans', sans-serif;
 	font-size: @font-size;
 	line-height: @font-line-height;
-	padding-top: 50px;
+	padding-top: 80px;
 }
 
 .container{
@@ -29,7 +29,43 @@ body{
 	width: 100%;
 	margin: 0 auto;
 }
-
+.login-fill{
+	background-color: darken(@light, 3.5);
+	border-radius: 3px;
+	border: 1px solid darken(@light, 20%);
+	padding: 20px !important;
+	-moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.21);
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.21);
+}
+#logo-svg{
+	-webkit-animation: logoAnim 2s ease-in-out 0s;
+	-moz-animation: logoAnim 1s ease-in-out 0s;
+	-ms-animation: logoAnim 1s ease-in-out 0s;
+	animation: logoAnim 1s ease-in-out 0s;
+	
+	-webkit-transform-origin: 100% 0%;
+}
+@-webkit-keyframes logoAnim {
+  0%   {
+  	-webkit-transform: rotateX(90deg);
+  }
+  100% { -webkit-transform: rotateX(0deg);}
+}
+@-moz-keyframes logoAnim {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+@-o-keyframes logoAnim {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+@keyframes logoAnim {
+  0%   { transform-origin-y: 0deg; }
+  100% { transform-origin-y: 90deg; }
+}
+.login-well{
+	/*background-color: rgba(0, 0, 0, .5);*/
+}
 h4.list-stats{
 	margin-left: 20px;
 	width: 80%;

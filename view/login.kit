@@ -14,56 +14,76 @@
 	<link rel="stylesheet" href="../css/main.css" />
 	<link rel="stylesheet" type="text/css" href="../css/font-awesome.min.css">
 </head>
-<body>
+<body style="background-image: url(../img/debut_light.png);">
 	<!-- @include "inclide/menu.html" -->
 	<div class="container">
-				<div class="col-4 col-offset-4">
-					<div class="col-6 col-offset-3 align-center">
-						<img src="../img/logo.png" alt="" />
-					</div>
-					<form method="post" action="../index.html">
-							<div class="row">
-								<div class="form-element">
-									<label>Username
-										<input id="username" type="text" class="negative" name="" value="" placeholder="Username"/>
-									</label>
-								</div>
-								<div class="form-element">
-									<label>Password
-										<input id="password" type="password" class="negative" name="" value="" placeholder="Password" />
-									</label>
-								</div>
-								<div class="form-element">
-									<div class="left">
-											<button type="submit" id="submit" class="btn negative" name="" value="">Login</button>
-									</div>
-									<div class="right">
-											<a id="forgotpassword" class="btn danger">Forgot password</a>
-									</div>
-								</div>
-									<!--<label><span id="forgotpassword">Forgot Password?</span></label>-->
+		<div class="col-12">
+			<div class="col-6 col-offset-3 login-fill">
+				<div class="col-12 align-center">
+					<svg id="logo-svg" style="margin-top: 10px; margin-bottom: -20px;" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+						 height="200px" viewBox="0 0 262.992 186.614">
+					<path id="dott" fill="#3c6ab3" d="M83.86,33.478c0,5.5-4.5,10-10.001,10h-7.665c-5.501,0-10.001-4.5-10.001-10v-6.13c0-5.5,4.5-10,10.001-10
+							h7.665c5.501,0,10.001,4.5,10.001,10V33.478z"/>
+					<path fill="#3c6ab3" d="M190.696,56.015v56.26c18.345,0,33.215-12.594,33.215-28.128C223.911,68.609,209.041,56.015,190.696,56.015z
+						"/>
+					<path fill="#222222" d="M174.526,50.479h-11.332c-3.769,0-7.066,2.113-8.771,5.213l-19.563,76.96V60.479
+						c0-5.501-4.5-10.001-10-10.001h-11.333c-3.787,0-7.1,2.134-8.796,5.259l-19.204,74.695V60.479c0-5.5-4.5-10-10.001-10H64.195
+						c-5.501,0-10.001,4.5-10.001,10v84.999c0,5.5,4.5,10,10.001,10h11.331c3.852,0,7.205-2.209,8.874-5.419l19.126-76.152v71.571
+						c0,5.5,4.501,10,10.001,10h11.333c3.897,0,7.283-2.265,8.932-5.539l19.401-75.173v70.712c0,5.5,4.501,10,10.001,10h11.332
+						c5.5,0,10-4.5,10-10V60.479C184.526,54.979,180.026,50.479,174.526,50.479z"/>
+					</svg>
+				</div>
+
+			<div class="col-10 col-offset-1">
+				<form method="post" action="../index.html" id="form">
+						<div class="row ">
+							<div class="form-element">
+								<label>Username
+									<input id="username" type="text" class="negative" name="" value="" placeholder="Username"/>
+								</label>
 							</div>
-					</form>
-						<!-- FORGOT PASSWORD -->
-						<div class="forgotpasswordmenu row" style="display: none;">
-								<div class="form-element">
-									<label>Enter your email
-										<input id="emailVal" type="text" class="negative" name="" value="" placeholder="name@example.com" />
-									</label>
+							<div class="form-element">
+								<label>Password
+									<input id="password" type="password" class="negative" name="" value="" placeholder="Password" />
+								</label>
+							</div>
+							<div class="form-element">
+								<div class="left">
+									<button type="submit" id="submit" class="btn negative" name="" value="">Login</button>
 								</div>
-								<div class="form-element">
+								<div class="right">
+									<button id="forgotpassword" class="btn color">Forgot password</button>
+								</div>
+							</div>
+								<!--<label><span id="forgotpassword">Forgot Password?</span></label>-->
+						</div>
+				</form>
+					<!-- FORGOT PASSWORD -->
+					<div class="forgotpasswordmenu row" style="display: none;">
+							<div class="form-element">
+								<label>Enter your email
+									<input id="emailVal" type="text" class="negative" name="" value="" placeholder="name@example.com" />
+								</label>
+							</div>
+							<div class="form-element">
+								<div class="left">
 									<input type="submit" id="forgotpwd" class="btn negative" name="" value="Send me validation email" />
 								</div>
-						</div>
-	
-	
-						<!-- success div -->
-						<div class="col-12" id="postvalidation" style="display: none;">
-							<p>Successfully sent email to: <span id="useremail"></span></p>
-						</div>
-	
-				</div>
+								<div class="right">
+								<button id="back" class="btn color">Back</button>
+								</div>
+							</div>
+					</div>
+
+
+					<!-- success div -->
+					<div class="col-12" id="postvalidation" style="display: none;">
+						<p>Successfully sent email to: <span id="useremail"></span></p>
+					</div>
+					</div>
 			</div>
+		</div>
+	</div>
 			<script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
 	
 		<script>
@@ -123,6 +143,13 @@
 				$('#forgotpassword').click(function(e) {
 						e.preventDefault();
 						$('.forgotpasswordmenu').slideToggle();
+						$('#form').slideToggle();
+				});
+				
+				$('#back').click(function(e) {
+						e.preventDefault();
+						$('.forgotpasswordmenu').slideToggle();
+						$('#form').slideToggle();
 				});
 		});
 		</script>

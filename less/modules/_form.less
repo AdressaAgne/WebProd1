@@ -40,7 +40,7 @@
 	
 	&:focus{
 		color: @dark;
-		background-color: @light !important;
+		background-color: @light;
 		
 	}
 	&.success{
@@ -59,6 +59,15 @@
 		&:focus{
 			color: @light;
 			background-color: #7199bc;
+			text-shadow: 0 1px @dark;
+		}
+	}
+	&.color{
+		border: 2px solid @color;
+		color: @color;
+		&:focus{
+			color: @light;
+			background-color: @color;
 			text-shadow: 0 1px @dark;
 		}
 	}
