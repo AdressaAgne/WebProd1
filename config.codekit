@@ -369,6 +369,15 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 1
 		},
+	"\/kit\/main.kit": {
+		"fileType": 2048,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/kit\/main.kit",
+		"outputAbbreviatedPath": "\/view\/main.html",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 1
+		},
 	"\/kit\/manage_courses.kit": {
 		"fileType": 2048,
 		"ignore": 0,
@@ -802,7 +811,7 @@
 		},
 	"\/view\/main.html": {
 		"fileType": 8192,
-		"ignore": 0,
+		"ignore": 1,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/view\/main.html",
 		"outputAbbreviatedPath": "No Output Path",
