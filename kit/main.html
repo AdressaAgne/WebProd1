@@ -15,13 +15,25 @@
 	<link rel="stylesheet" href="../css/font-awesome.min.css" />
 </head>
 <body>
-	<div class="container">
-		<!--	$home = active -->
-			<!--	$profile = none -->
-			<!--	$courses = none -->
-			<!--	$manage = none -->
-			<!--	$upload = none -->
-		<!-- @include "inclide/menu.kit" -->
+	<div class="container-big">
+																
+<div class="container">
+	<div class="nav-bar nav-bar-fixed">
+        <div id="pull" class="pull">
+            <div class="bar"></div>
+        </div>
+        <ul class="container" id="nav-bar-ul">
+            <li class="active home"><a href="login.html"><i class="fa fa-home"></i></a></li>
+            <li class="none"><a href="upload_lecture.html">New Lecture</a></li>
+            <li class="none"><a href="profile.html">Profile</a></li>
+            <li class="none"><a href="courses.html">Courses</a></li>
+            <li class="none"><a href="manage_lectures.html">Lectures</a></li>
+            <li class="right"><a href="../login.html">Logout</a></li>
+            <li class="right"><input type="search" class="search negative small" /><div class="search-bar"></div></li>
+        </ul>
+    </div>
+</div>
+<script src="../js/menu.js"></script>
 			<div class="page-header">
 				<h2>Programming for Web: Chapter 7, jQuery</h2>
 			</div>
@@ -102,37 +114,34 @@
 
 			<div class="row">
 				<div class="col-8">
-					<div class="page-header">
-						<h3>Comments</h3>
-					</div>
-					<div class="col-2">
-						<label> Username
-							<img src="../img/face.png" alt="" />
-						</label>
-						<small class="align-left"><a href="">Not you?</a></small>
-					</div>
-					<div class="col-10">
-						<div class="form-element">
-							<label>Message:
-								<textarea class="negative" name="" id="" rows="4"></textarea>
-							</label>
-						</div>
-						<div class="form-element align-right">
+
+						
+							<div class="page-header">
+								<h3>Comments</h3>
+							</div>
+						
+							<div class="col-12">
+								<p>Post as <span>Username</span> <small><a href="">Not you?</a></small></p>
+							</div>
 							
-							<input type="button" value="post" class="btn negative"/>
-						</div>
-					</div>
+							<div class="form-element">
+								Message:
+								<textarea class="negative" name="" id="" cols="5"></textarea>
+							</div>
+							<div class="form-element align-right">
+								<input type="button" value="post" class="btn negative"/>
+							</div>
+
 
 					<!-- posts -->
 					<div class="col-12">
-						<div class="col-12 well">
-								<div class="col-2">
-									<img src="../img/face.png" alt="" />
+						<div class="col-12">
+							<div class="col-12">
+								<div class="col-12 well">
+									<h4><span>Username </span><small>22.04-15</small></h4>
+									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo, voluptatem, excepturi, doloribus tempora quisquam accusamus autem commodi fugit quaerat porro repellat ipsum dignissimos cumque veniam tenetur architecto itaque atque reiciendis.</p>
 								</div>
-								<div class="col-10">
-								<h4><span>Username </span><small>22.04-15</small></h4>
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo, voluptatem, excepturi, doloribus tempora quisquam accusamus autem commodi fugit quaerat porro repellat ipsum dignissimos cumque veniam tenetur architecto itaque atque reiciendis.</p>
-								</div>
+							</div>
 						</div>
 					</div>
 				<!-- end posts -->
