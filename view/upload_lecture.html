@@ -26,7 +26,7 @@
 </head>
 
   <div class="container">
-     <div class="col-6 col-offset-3">
+     <div class="col-12">
     <!--<div class="col-12">-->
       <div class="page-header">
         <h2>Upload Lecture</h2>
@@ -130,12 +130,12 @@
           <legend>Keywords/Details</legend>
           <div class="form-element">
             <div class="col-3">
-              <input type="text" placeholder="amount of keywords" class="negative">
+              <input type="text" placeholder="amount of keywords" id="keywordAmount" class="negative">
             </div>
           </div>
           <!--<div class="form-element">-->
             <div class="col-3">
-              <input type="button" value="Add keywords" class="btn color" style="margin-top:-12px;"/><br>
+              <input type="button" value="Add keywords" id="keywordSubmit" class="btn color" style="margin-top:-12px;"/><br>
             </div>
             <div class="col-6">
               <!-- Empty div -->
@@ -145,72 +145,16 @@
           <div class="col-3">Video time<input type="text" class="negative"></div>
           <div class="col-3">PDF page nr:<input type="text" class="negative"></div>
           <div class="col-2">Slide nr<input type="text" class="negative"></div>
+          <div class="col-12 align-right">
+            <input type="button" id="addkeyword" value="+" class="btn color"/><br>
+          </div>
         </fieldset>
       </div>
     </div>
 
-
-<!--
-
-        <div class="row">
-          <div class="col-12">
-            <div class="form-element">
-              <label for="videopresentation">Upload video presentation</label>
-              <button id="videopresentation" class="btn color">Upload Video</button>
-              <div class="content" style="display: none;">
-  asdasd
-              </div>
-            </div>
-
-            <div class="form-element">
-              <label for="pdf">Upload video presentation</label>
-              <button id="pdf" class="btn color">Upload Video</button>
-
-            </div>
-            <div class="content" style="display: none;">
-asdasd
-            </div>
-            <div class="form-element">
-              <label for="powerpoint">Upload video presentation</label>
-              <button id="powerpoint" class="btn color">Upload Video</button>
-
-            </div>
-            <div class="content" style="display: none;">
-asdasd
-            </div>
-          </div>
-        </div>
--->
-        <!-- OLD BUTTONS -->
-<!--
-          <div class="form-element">
-            <label for="videopresentation">Upload video presentation</label><br>
-              <input type="file" class="negative" name="videopresentation" value=""/>
-          </div>
-          <div class="form-element">
-            <label for="foil">Upload PDF/PPT</label><br>
-              <input type="file" class="negative" name="foil" value=""/>
-          </div>
-          <div class="form-element">
-            <label for="js">Upload HTML</label><br>
-              <input type="file" class="negative" name="html" value=""/>
-          </div>
-          <div class="form-element">
-            <label for="js">Upload CSS</label><br>
-              <input type="file" class="negative" name="css" value=""/>
-          </div>
-          <div class="form-element">
-            <label for="js">Upload JS</label><br>
-              <input type="file" class="negative" name="js" value=""/>
-          </div>
--->
-<!-- OLD BUTTONS -->
-
-
-
           <!-- Submit -->
           <div class="form-element">
-            <div class="align-left"><input type="submit" class="btn negative" name="" value="Submit" /></div>
+            <div class="align-left"><input type="submit" class="btn negative" name="" value="Upload Lecture" /></div>
           </div>
         </form>
       </div>
