@@ -30,8 +30,36 @@
   float: left;
   padding: 12px 0px 15px 0px;
   margin: 0px;
+  @flip-size: 18px;
+  position: relative;
   &.right{
   	float: right;
+  }
+  &.active.home:after{
+  	content: '';
+  	display: block;
+  	top: 55px;
+  	left: 0px;
+  	height: 0px;
+  	border-bottom: @flip-size solid rgba(0, 0, 0, 0);
+  	border-left: @flip-size - 1px solid darken(@color, 20%);
+  	border-right: @flip-size solid darken(@color, 20%);
+  	border-top: 0px solid darken(@color, 20%);
+  	position: absolute;
+  	-moz-box-shadow: -1px 0 rgba(0, 0, 0, @active-shadow), 1px 0 rgba(0, 0, 0, @active-shadow);
+  	box-shadow: -1px 0 rgba(0, 0, 0, @active-shadow), 1px 0 rgba(0, 0, 0, @active-shadow);
+  }
+  &.home:hover:after{
+  	content: '';
+  	display: block;
+  	top: 55px;
+  	left: 0px;
+  	height: 0px;
+  	border-bottom: @flip-size solid rgba(0, 0, 0, 0);
+  	border-left: @flip-size - 1px solid darken(@light, 30%);
+  	border-right: @flip-size solid darken(@light, 30%);
+  	border-top: 0px solid darken(@light, 30%);
+  	position: absolute;
   }
 }
 .nav-bar ul > li:hover > a {
