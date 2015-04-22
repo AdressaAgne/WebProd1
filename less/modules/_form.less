@@ -246,18 +246,24 @@ ul.tags li{
 	display: inline-block;
 	margin: 2px 0px;
 }
-
+textarea{
+	max-width: 100%;
+	min-width: 100%;
+}
 .form-element{
 	padding: 5px;
 	& [type='text'], & [type='password'], & [type='email'], & [type='search'], & label, & select, & textarea{
 		width: 100%;
-		
+		max-width: 100%;
+		min-width: 100%;
 	}
 	
 	&.inline{
 		display: inline-block;
 		& [type='text'], & [type='password'], & [type='email'], & [type='search'], & label, & select, & textarea{
 			width: auto;
+			max-width: 100%;
+			min-width: 100%;
 		}
 	}
 	
