@@ -49,7 +49,7 @@
   	-moz-box-shadow: -1px 0 rgba(0, 0, 0, @active-shadow), 1px 0 rgba(0, 0, 0, @active-shadow);
   	box-shadow: -1px 0 rgba(0, 0, 0, @active-shadow), 1px 0 rgba(0, 0, 0, @active-shadow);
   }
-  &.home:hover:after{
+  &.home:not(.active):hover:after{
   	content: '';
   	display: block;
   	top: 55px;
