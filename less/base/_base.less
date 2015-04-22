@@ -194,11 +194,11 @@ body{
 	border-radius: 3px;
 	border: 1px solid darken(@light, 20%);
 	padding: 20px !important;
-	-moz-box-shadow: inset 5px 0 rgba(34, 34, 34, 0.77);
-	box-shadow: inset 5px 0 rgba(34, 34, 34, 0.77);
+	//-moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.40);
+	//box-shadow: 0 0 10px rgba(0, 0, 0, 0.40);
 	@flip-size: 20px;
 	position: relative;
-	&:after{
+	&:before{
 		content: '';
 		display: block;
 		top: -1px;
@@ -209,7 +209,9 @@ body{
 		border-right: @flip-size solid @color;
 		border-top: 50px solid @color;
 		position: absolute;
-}
+		-moz-box-shadow: -1px 0 rgba(0, 0, 0, @active-shadow), 1px 0 rgba(0, 0, 0, @active-shadow);
+		box-shadow: -1px 0 rgba(0, 0, 0, @active-shadow), 1px 0 rgba(0, 0, 0, @active-shadow);
+	}
 }
 h4.list-stats{
 	margin-left: 20px;
