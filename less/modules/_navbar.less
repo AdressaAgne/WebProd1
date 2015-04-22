@@ -144,6 +144,8 @@
   top: 0px;
   right: @size;
   float: right;
+  width: 45px;
+  height: 55px;
   cursor: pointer;
   padding: 10px 10px 11px;
   background-color: @color;
@@ -157,16 +159,45 @@
   	-moz-box-shadow: -1px 0 rgba(0, 0, 0, @active-shadow), 1px 0 rgba(0, 0, 0, @active-shadow);
   	box-shadow: -1px 0 rgba(0, 0, 0, @active-shadow), 1px 0 rgba(0, 0, 0, @active-shadow);
 }
-.bar, .bar:before, .bar:after {
-  width: 25px;
-  height: 3px;
-  margin-bottom: 5px;
-  background-color: lighten(@color, 5%);
+.pull .bar, .pull .bar:before, .pull .bar:after {
+	top: 10px;
+	width: 25px;
+	height: 3px;
+	background-color: lighten(@color, 5%);
 	-moz-box-shadow: 0 -1px 0 lighten(@color, 10%),0 1px 0 darken(@color, 10%);
 	box-shadow: 0 -1px 0 lighten(@color, 10%), 0 1px 0 darken(@color, 10%);
 	position: absolute;
-	 display: block;
-	 content: '';
+	display: block;
+	content: '';
+	-webkit-transition: all .5s linear;
+	
+}
+.pull.active .bar{
+	box-shadow: none;
+	top: 20px;
+	transform: rotateZ(45deg);
+	background-color: lighten(@color, 10%);
+}
+.pull.active .bar:before{
+	opacity: 0;
+	top: 0;
+	box-shadow: none;
+	transform: rotateZ(-45deg);
+}
+
+.pull.active .bar:after{
+	box-shadow: none;
+	top: 0px;
+	background-color: lighten(@color, 10%);
+	transform: rotateZ(-90deg);
+}
+
+.pull .bar:before{
+	top: 10px;
+}
+
+.pull .bar:after{
+	top: 20px;
 }
 
 @media (max-width: 768px) {

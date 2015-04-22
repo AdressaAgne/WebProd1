@@ -1,5 +1,11 @@
 // Select the burger element with id 'pull'
 document.getElementById("pull").addEventListener("click", function(e) {
+	
+	if (this.className == "pull") {
+		this.className = "pull active"
+	} else {
+		this.className = "pull"
+	}
 	var liQuery = document.getElementById("nav-bar-ul").getElementsByTagName("li");
 	var active;
 	for (var i = 0; i < liQuery.length; i++) {
