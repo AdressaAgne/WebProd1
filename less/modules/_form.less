@@ -1,6 +1,6 @@
 @textbox-size: 6px;
 
-[type='text'], [type='password'], [type='email'], [type='search'], select, textarea, button{
+[type='text'], [type='password'], [type='email'], [type='search'], select, textarea{
 	font-family: 'open sans', sans-serif;
 	padding: @textbox-size @textbox-size*1.5;
 	margin: 2px;
@@ -119,9 +119,10 @@
 		}
 	}
 }
-button.search{
-	width: 28px;
-	height: 28px;
+[type='search'].search{
+	
+	width: 24px;
+	height: 24px;
 	margin: -20px 75px -20px 0px;
 	position: relative;
 	-webkit-transition: all .3s linear;
@@ -129,37 +130,41 @@ button.search{
 	-ms-transition: all .3s linear;
 	-o-transition: all .3s linear;
 	transition: all .3s linear;
+	-moz-box-shadow: 0 -1px @light;
+	box-shadow: 0 -1px @light;
 	&:focus{
 		width: 150px;
 		margin: -20px 0px;
-	}
-	&:before{
-		content: '';
-		display: block;
-		top:20px;
-		right: -5px;
-		height: 15px;
-		width: 3px;
-		position: absolute;
-		background-color: @dark;
-		-webkit-transform: rotateZ(-45deg);
-		-webkit-transition: all .3s linear;
-		-moz-transition: all .3s linear;
-		-ms-transition: all .3s linear;
-		-o-transition: all .3s linear;
-		transition: all .3s linear;
-	}
-	&:focus:after{
-		height: 0px;
+	
 	}
 }
+.search-bar{
+	top: 33px;
+	left: 23px;
+	height: 10px;
+	width: 3px;
+	position: absolute;
+	background-color: @dark;
+	-webkit-transform: rotateZ(-45deg);
+	-webkit-transition: height .3s linear;
+	-moz-transition: height .3s linear;
+	-ms-transition: height .3s linear;
+	-o-transition: height .3s linear;
+	transition: height .3s linear;
+	display: block;
+}
+[type='search'].search:focus + .search-bar{
+	top: 36px;
+	height: 0px;
+} 
+
+
 .disabled{
 	opacity: .4;
 }
 
 fieldset{
 	border: none;
-	
 	&.disabled .btn:hover{
 		background-color: @light;
 		color: @dark;
