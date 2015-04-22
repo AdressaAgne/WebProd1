@@ -36,6 +36,22 @@ body{
 	padding: 20px !important;
 	-moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.21);
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.21);
+	@flip-size: 20px;
+	position: relative;
+	&:after{
+		content: '';
+		display: block;
+		top: -1px;
+		left: 30px;
+		height: 0px;
+		border-bottom: @flip-size solid rgba(0, 0, 0, 0);
+		border-left: @flip-size solid darken(@color, 20%);
+		border-right: @flip-size solid darken(@color, 20%);
+		border-top: 50px solid darken(@color, 20%);
+		position: absolute;
+		-moz-box-shadow: -1px 0 rgba(0, 0, 0, @active-shadow), 1px 0 rgba(0, 0, 0, @active-shadow);
+		box-shadow: -1px 0 rgba(0, 0, 0, @active-shadow), 1px 0 rgba(0, 0, 0, @active-shadow);
+	}
 }
 #logo-svg{
 	-webkit-animation: logoAnim 2s ease-in-out 0s;
