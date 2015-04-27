@@ -138,7 +138,7 @@
 
 					<!-- posts -->
 					<div class="col-12" id="commentSection">
-						<div class="col-12 well">
+						<div class="col-12 well comment">
 								<div class="col-2 col-phone-3">
 									<img src="../img/face.png" alt="" />
 								</div>
@@ -183,7 +183,9 @@
 	<script src="../js/min/main-min.js" type="text/javascript"></script>
 
 	<script>
+var counter = 0;
 $(function(){
+
 	$('#postComment').on('click', function(){
 		var comment = $('#commentVal').val();
 
@@ -191,7 +193,7 @@ $(function(){
 
 		if(comment.length > 0){
 			$("#commentVal" ).removeClass( "negative danger" ).addClass( "success" );
-			$('#commentSection').append('<div class="col-12 well">'+
+			$('#commentSection').append('<div class="col-12 well comment">'+
 				'<div class="col-2 col-phone-3">'+
 					'<img src="../img/face.png" alt="" />'+
 				'</div>'+
@@ -204,11 +206,18 @@ $(function(){
 					'</div>'+
 					'</div>'+
 			'</div>');
+			counter++;
 		}else{
 			$("#commentVal" ).removeClass( "negative" ).addClass( "danger" );
 			$('#commentVal').attr("placeholder", "Please fill in somethinbg");
 		}
 });//eventListener
+
+if(counter > 5){
+	//Legg til skjul funksjonalitet for resten av commentsene
+	//get last comment osv osv
+}
+
 });//Onready
 	</script>
 </body>
