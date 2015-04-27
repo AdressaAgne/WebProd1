@@ -189,7 +189,7 @@ $(function(){
 	$('#postComment').on('click', function(){
 		var comment = $('#commentVal').val();
 
-		/* add date & username l8tørr  */
+		/* add later: user.getPic() & user.getUsername() & getDate()  */
 
 		if(comment.length > 0){
 			$("#commentVal" ).removeClass( "negative danger" ).addClass( "success" );
@@ -211,13 +211,12 @@ $(function(){
 			$("#commentVal" ).removeClass( "negative" ).addClass( "danger" );
 			$('#commentVal').attr("placeholder", "Please fill in somethinbg");
 		}
-});//eventListener
+	});//eventListener
 
-if(counter > 5){
-	//Legg til skjul funksjonalitet for resten av commentsene
-	//get last comment osv osv
-}
-
+	if(counter > 5){
+		//hide comments after comment nr 5
+		//get last comment osv osv........ add eventlistener to "read more"
+	}
 });//Onready
 	</script>
 </body>
