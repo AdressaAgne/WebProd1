@@ -190,6 +190,7 @@ $(function(){
 		/* add date & username l8tørr  */
 
 		if(comment.length > 0){
+			$("#commentVal" ).removeClass( "negative danger" ).addClass( "success" );
 			$('#commentSection').append('<div class="col-12 well">'+
 				'<div class="col-2 col-phone-3">'+
 					'<img src="../img/face.png" alt="" />'+
@@ -202,9 +203,9 @@ $(function(){
 						'<i class="fa fa-thumbs-up">'+'</i>'+'</a>'+
 					'</div>'+
 					'</div>'+
-
 			'</div>');
 		}else{
+			$("#commentVal" ).removeClass( "negative" ).addClass( "danger" );
 			$('#commentVal').attr("placeholder", "Please fill in somethinbg");
 		}
 });//eventListener
