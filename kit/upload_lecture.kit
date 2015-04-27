@@ -169,12 +169,16 @@
               <!-- Empty div -->
             </div>
           <!--</div>-->
-          <div class="col-4">Keyword<input type="text" class="negative"></div>
-          <div class="col-3">Video time<input type="text" class="negative"></div>
-          <div class="col-3">PDF page nr:<input type="text" class="negative"></div>
-          <div class="col-2">Slide nr<input type="text" class="negative"></div>
-          <div class="col-12 align-right">
-            <input type="button" id="addkeyword" value="+" class="btn color"/><br>
+          <div class="col-12" id="keywordsList">
+            <div class="col-4">Keyword<input type="text" class="negative"></div>
+            <div class="col-3">Video time<input type="text" class="negative"></div>
+            <div class="col-3">PDF page nr:<input type="text" class="negative"></div>
+            <div class="col-2">Slide nr<input type="text" class="negative"></div>
+            <!-- THE PLUSS BUTTON 
+            <div class="col-12 align-right">
+              <input type="button" id="addkeyword" value="+" class="btn color"/><br>
+            </div>
+          -->
           </div>
         </fieldset>
       </div>
@@ -194,8 +198,27 @@
   $(function() {
     $(".display").click(function() {
       $(this).next(".mydiv").slideToggle();
-    });
-  });
+
+
+    });//evtListener DIALOG
+
+    /*keywords add */
+    $('#keywordSubmit').on('click', function(){
+      var keywordsAmount = $('#keywordAmount').val();
+
+      for(var i = 0; i < keywordsAmount; i++){
+        $('#keywordsList').append('<div class="col-4" data->'+'Keyword'+'<input type="text" class="negative">'+'</div>'+
+        '<div class="col-3">'+'Video time'+'<input type="text" class="negative">'+'</div>'+
+        '<div class="col-3">'+'PDF page nr:'+'<input type="text" class="negative">'+'</div>'+
+        '<div class="col-2">'+'Slide nr'+'<input type="text" class="negative">'+'</div>');
+      }
+      /*
+      $('#keywordSubmit').after('<div class="col-12 align-right">'+
+        '<input type="button" id="addkeyword" value="+" class="btn color"/>'+'<br>'+
+      '</div>');
+      */
+    });//evtListener Keywords
+  });//onready
 
 
   </script>
