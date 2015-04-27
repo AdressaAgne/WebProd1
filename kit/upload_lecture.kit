@@ -214,12 +214,21 @@
         '<div class="col-3">'+'PDF page nr:'+'<input type="text" class="negative">'+'</div>'+
         '<div class="col-2">'+'Slide nr'+'<input type="text" class="negative">'+'</div>');
       }
-      /*
-      $('#keywordSubmit').after('<div class="col-12 align-right">'+
+
+      $('#keywordsList').append('<div class="col-12 align-right">'+
         '<input type="button" id="addkeyword" value="+" class="btn color"/>'+'<br>'+
       '</div>');
-      */
     });//evtListener Keywords
+
+    /* Pluss button keywords */
+    /* it doesnt exist in the DOM. fix l8tørr */
+    $('#addkeyword').on('click', function(){
+      $('#keywordsList').append('<div class="col-4" data->'+'Keyword'+'<input type="text" class="negative">'+'</div>'+
+      '<div class="col-3">'+'Video time'+'<input type="text" class="negative">'+'</div>'+
+      '<div class="col-3">'+'PDF page nr:'+'<input type="text" class="negative">'+'</div>'+
+      '<div class="col-2">'+'Slide nr'+'<input type="text" class="negative">'+'</div>');
+    });
+
   });//onready
 
 
