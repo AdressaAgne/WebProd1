@@ -423,6 +423,15 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 1
 		},
+	"\/kit\/upload_lecture.kit": {
+		"fileType": 2048,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/kit\/upload_lecture.kit",
+		"outputAbbreviatedPath": "\/view\/upload_lecture.html",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 1
+		},
 	"\/less\/base\/_all.less": {
 		"allowInsecureImports": 0,
 		"createSourceMap": 0,

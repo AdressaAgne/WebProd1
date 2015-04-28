@@ -87,7 +87,7 @@
       </div>
       <div class="form-element">
         <h3>Lecture Desciption</h3>
-        <textarea id="titleDesc" class="" rows="10" cols="40"></textarea>
+        <textarea id="titleDesc" class="negative" rows="10" cols="40"></textarea>
       </div>
       <div class="page-header"><h3></h3></div>
 
@@ -209,35 +209,35 @@
   <script>
 
   $(function() {
-    $(".display").click(function() {
-      $(this).next(".mydiv").slideToggle();
-
-
-    });//evtListener DIALOG
-
-    /*keywords add */
-    $('#keywordSubmit').on('click', function(){
-      var keywordsAmount = $('#keywordAmount').val();
-      addKeywords(keywordsAmount);
-      $('#addkeyword').show();
-    });//evtListener Keywords
-	
-	function addKeywords(amount) {
-		for(var i = 0; i < amount; i++){
-		  $('#keywordsList').append('<div class="row"><div class="col-4" data->'+'Keyword'+'<input type="text" class="negative">'+'</div>'+
-		  '<div class="col-3">'+'Video time (m:s)'+'<input type="text" class="negative">'+'</div>'+
-		  '<div class="col-3">'+'PDF page nr:'+'<input type="text" class="negative">'+'</div>'+
-		  '<div class="col-2">'+'Slide nr'+'<input type="text" class="negative">'+'</div></div>');
-		}
-	}
-	
-    /* Pluss button keywords */
-    /* it doesnt exist in the DOM. fix l8tørr */
-    $('#addkeyword').on('click', function(){
-    	addKeywords(1);
-    });
-
-  });//onready
+      $(".display").click(function() {
+        $(this).next(".mydiv").slideToggle();
+  
+  
+      });//evtListener DIALOG
+  
+      /*keywords add */
+      $('#keywordSubmit').on('click', function(){
+        var keywordsAmount = $('#keywordAmount').val();
+        addKeywords(keywordsAmount);
+        $('#addkeyword').show();
+      });//evtListener Keywords
+  	
+  	function addKeywords(amount) {
+  		for(var i = 0; i < amount; i++){
+  		  $('#keywordsList').append('<div class="row"><div class="col-4" data->'+'Keyword'+'<input type="text" class="negative">'+'</div>'+
+  		  '<div class="col-3">'+'Video time (m:s)'+'<input type="text" class="negative">'+'</div>'+
+  		  '<div class="col-3">'+'PDF page nr:'+'<input type="text" class="negative">'+'</div>'+
+  		  '<div class="col-2">'+'Slide nr'+'<input type="text" class="negative">'+'</div></div>');
+  		}
+  	}
+  	
+      /* Pluss button keywords */
+      /* it doesnt exist in the DOM. fix l8tørr */
+      $('#addkeyword').on('click', function(){
+      	addKeywords(1);
+      });
+  
+    });//onready
 
 
   </script>
