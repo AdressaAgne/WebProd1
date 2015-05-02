@@ -8,69 +8,331 @@
 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-	<title>Ttitle</title>
+	<title>IMP - Main View</title>
 
 	<!--Main css-->
-	<link rel="stylesheet" href="css/main.css"/>
-	<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+	<link rel="stylesheet" href="../css/main.css" />
+	<link rel="stylesheet" href="../css/test.css">
+	<link rel="stylesheet" href="../css/font-awesome.min.css" />
+
 </head>
+
 <body>
-	<div class="container-big">
-		<div class="col-4 col-phone-12 col-tab-6">
-			<a href="view/login.html">
-				<div class="col-12 well"><i class="fa fa-upload"></i> Login</div>
-			</a>
-		</div>
-		<div class="col-4 col-phone-12 col-tab-6">
-			<a href="view/main.html">
-				<div class="col-12 well"><i class="fa fa-archive"></i> Main</div>
-			</a>
-		</div>
-		<div class="col-4 col-phone-12 col-tab-6">
-			<a href="view/profile.html">
-				<div class="col-12 well"><i class="fa fa-graduation-cap"></i> Profile</div>
-			</a>
-		</div>
-		<div class="col-4 col-phone-12 col-tab-6">
-			<a href="view/admin_main.html">
-				<div class="col-12 well"><i class="fa fa-graduation-cap"></i> Admin Mainpage</div>
-			</a>
-		</div>
-		<div class="col-4 col-phone-12 col-tab-6">
-			<a href="view/manage_users.html">
-				<div class="col-12 well"><i class="fa fa-graduation-cap"></i> Manage Users</div>
-			</a>
-		</div>
-		<div class="col-4 col-phone-12 col-tab-6">
-			<a href="view/teacher_main.html">
-				<div class="col-12 well"><i class="fa fa-graduation-cap"></i> Teacher Mainpage</div>
-			</a>
-		</div>
-		<div class="col-4 col-phone-12 col-tab-6">
-			<a href="view/courses.html">
-				<div class="col-12 well"><i class="fa fa-graduation-cap"></i> Courses</div>
-			</a>
-		</div>
-		<div class="col-4 col-phone-12 col-tab-6">
-			<a href="view/upload_lecture.html">
-				<div class="col-12 well"><i class="fa fa-graduation-cap"></i> Upload Lecture</div>
-			</a>
-		</div>
-		<div class="col-4 col-phone-12 col-tab-6">
-			<a href="view/manage_lectures.html">
-				<div class="col-12 well"><i class="fa fa-graduation-cap"></i> Manage Lectures</div>
-			</a>
-		</div>
-		<div class="col-4 col-phone-12 col-tab-6">
-			<a href="view/404.html">
-				<div class="col-12 well"><i class="fa fa-graduation-cap"></i> 404</div>
-			</a>
-		</div>
-		<div class="col-4 col-phone-12 col-tab-6">
-			<a href="view/loginTest.html">
-				<div class="col-12 well"><i class="fa fa-graduation-cap"></i> Animated Logo</div>
-			</a>
-		</div>
-	</div>
+
+<div class="container">
+	<div class="nav-bar nav-bar-fixed">
+        <div id="pull" class="pull">
+            <div class="bar"></div>
+        </div>
+        <ul class="container" id="nav-bar-ul">
+            <li class="active home"><a href="login.html"><i class="fa fa-home"></i></a></li>
+            <li class="none"><a href="upload_lecture.html">New Lecture</a></li>
+            <li class="none"><a href="profile.html">Profile</a></li>
+            <li class="none"><a href="courses.html">Courses</a></li>
+            <li class="none"><a href="manage_lectures.html">Lectures</a></li>
+            <li class="right"><a href="../login.html">Logout</a></li>
+            <li class="right"><input type="search" class="search negative small" /><div class="search-bar"></div></li>
+        </ul>
+    </div>
+</div>
+<script src="../js/menu.js"></script>
+			<div class="container">
+			<div class="page-header">
+				<h2>Welcome back StudentName</h2>
+			</div>
+			<div class="row">
+				<div class="col-12">
+					<div class="col-3 course"> <!-- Fag -->
+							<div class="col-12">
+								<img src="../img/courses/html.png" alt="">
+							</div>
+							<div class="col-12">
+								<p id="snerk">Learn to code html5 with Gerardo De La Riva Espinosa</p>
+							</div>
+							<div class="col-12 rating">
+								<p><i class="fa fa-thumbs-up">689 likes</i></p>
+							</div>
+							<div class="col-6">
+								<div class="form-element">
+									<div class="btn color subscribe">Subscribe</div>
+								</div>
+							</div>
+							<div class="col-6">
+								<div class="form-element">
+									<div class="btn color">Read more</div>
+								</div>
+							</div>
+					</div>
+
+					<div class="col-3 course"> <!-- Fag -->
+							<div class="col-12">
+								<img src="../img/courses/css3.png" alt="">
+							</div>
+							<div class="col-12">
+								<p id="snerk">Learn to code css3 with Gerardo De La Riva Espinosa</p>
+							</div>
+							<div class="col-12 rating">
+								<p><i class="fa fa-thumbs-up">689 likes</i></p>
+							</div>
+							<div class="col-6">
+								<div class="form-element">
+									<div class="btn color subscribe">Subscribe</div>
+								</div>
+							</div>
+							<div class="col-6">
+								<div class="form-element">
+									<div class="btn color">Read more</div>
+								</div>
+							</div>
+					</div>
+
+
+					<div class="col-3 course"> <!-- Fag -->
+							<div class="col-12">
+								<img src="../img/courses/js.png" alt="">
+							</div>
+							<div class="col-12">
+								<p id="snerk">Learn to code Javascript with Gerardo De La Riva Espinosa</p>
+							</div>
+							<div class="col-12 rating">
+								<p><i class="fa fa-thumbs-up">689 likes</i></p>
+							</div>
+							<div class="col-6">
+								<div class="form-element">
+									<div class="btn color subscribe">Subscribe</div>
+								</div>
+							</div>
+							<div class="col-6">
+								<div class="form-element">
+									<div class="btn color">Read more</div>
+								</div>
+							</div>
+					</div>
+
+
+
+					<div class="col-3 course"> <!-- Fag -->
+							<div class="col-12">
+								<img src="../img/courses/Cplus.png" alt="">
+							</div>
+							<div class="col-12">
+								<p id="snerk">Learn to code C++ with Gerardo De La Riva Espinosa</p>
+							</div>
+							<div class="col-12 rating">
+								<p><i class="fa fa-thumbs-up">689 likes</i></p>
+							</div>
+							<div class="col-6">
+								<div class="form-element">
+									<div class="btn color subscribe">Subscribe</div>
+								</div>
+							</div>
+							<div class="col-6">
+								<div class="form-element">
+									<div class="btn color">Read more</div>
+								</div>
+							</div>
+					</div>
+
+					<div class="col-3 course"> <!-- Fag -->
+							<div class="col-12">
+								<img src="../img/courses/Cplus.png" alt="">
+							</div>
+							<div class="col-12">
+								<p id="snerk">Learn to code C++ with Gerardo De La Riva Espinosa</p>
+							</div>
+							<div class="col-12 rating">
+								<p><i class="fa fa-thumbs-up">689 likes</i></p>
+							</div>
+							<div class="col-6">
+								<div class="form-element">
+									<div class="btn color subscribe">Subscribe</div>
+								</div>
+							</div>
+							<div class="col-6">
+								<div class="form-element">
+									<div class="btn color">Read more</div>
+								</div>
+							</div>
+					</div>
+
+
+					<div class="col-3 course"> <!-- Fag -->
+							<div class="col-12">
+								<img src="../img/courses/Cplus.png" alt="">
+							</div>
+							<div class="col-12">
+								<p id="snerk">Learn to code C++ with Gerardo De La Riva Espinosa</p>
+							</div>
+							<div class="col-12 rating">
+								<p><i class="fa fa-thumbs-up">689 likes</i></p>
+							</div>
+							<div class="col-6">
+								<div class="form-element">
+									<div class="btn color subscribe">Subscribe</div>
+								</div>
+							</div>
+							<div class="col-6">
+								<div class="form-element">
+									<div class="btn color">Read more</div>
+								</div>
+							</div>
+					</div>
+
+
+					<div class="col-3 course"> <!-- Fag -->
+							<div class="col-12">
+								<img src="../img/courses/Cplus.png" alt="">
+							</div>
+							<div class="col-12">
+								<p id="snerk">Learn to code C++ with Gerardo De La Riva Espinosa</p>
+							</div>
+							<div class="col-12 rating">
+								<p><i class="fa fa-thumbs-up">689 likes</i></p>
+							</div>
+							<div class="col-6">
+								<div class="form-element">
+									<div class="btn color subscribe">Subscribe</div>
+								</div>
+							</div>
+							<div class="col-6">
+								<div class="form-element">
+									<div class="btn color">Read more</div>
+								</div>
+							</div>
+					</div>
+
+
+					<div class="col-3 course"> <!-- Fag -->
+							<div class="col-12">
+								<img src="../img/courses/Cplus.png" alt="">
+							</div>
+							<div class="col-12">
+								<p id="snerk">Learn to code C++ with Gerardo De La Riva Espinosa</p>
+							</div>
+							<div class="col-12 rating">
+								<p><i class="fa fa-thumbs-up">689 likes</i></p>
+							</div>
+							<div class="col-6">
+								<div class="form-element">
+									<div class="btn color subscribe">Subscribe</div>
+								</div>
+							</div>
+							<div class="col-6">
+								<div class="form-element">
+									<div class="btn color">Read more</div>
+								</div>
+							</div>
+					</div>
+
+
+					<div class="col-3 course"> <!-- Fag -->
+							<div class="col-12">
+								<img src="../img/courses/Cplus.png" alt="">
+							</div>
+							<div class="col-12">
+								<p id="snerk">Learn to code C++ with Gerardo De La Riva Espinosa</p>
+							</div>
+							<div class="col-12 rating">
+								<p><i class="fa fa-thumbs-up">689 likes</i></p>
+							</div>
+							<div class="col-6">
+								<div class="form-element">
+									<div class="btn color subscribe">Subscribe</div>
+								</div>
+							</div>
+							<div class="col-6">
+								<div class="form-element">
+									<div class="btn color">Read more</div>
+								</div>
+							</div>
+					</div>
+
+
+					<div class="col-3 course"> <!-- Fag -->
+							<div class="col-12">
+								<img src="../img/courses/Cplus.png" alt="">
+							</div>
+							<div class="col-12">
+								<p id="snerk">Learn to code C++ with Gerardo De La Riva Espinosa</p>
+							</div>
+							<div class="col-12 rating">
+								<p><i class="fa fa-thumbs-up">689 likes</i></p>
+							</div>
+							<div class="col-6">
+								<div class="form-element">
+									<div class="btn color subscribe">Subscribe</div>
+								</div>
+							</div>
+							<div class="col-6">
+								<div class="form-element">
+									<div class="btn color">Read more</div>
+								</div>
+							</div>
+					</div>
+
+
+					<div class="col-3 course"> <!-- Fag -->
+							<div class="col-12">
+								<img src="../img/courses/Cplus.png" alt="">
+							</div>
+							<div class="col-12">
+								<p id="snerk">Learn to code C++ with Gerardo De La Riva Espinosa</p>
+							</div>
+							<div class="col-12 rating">
+								<p><i class="fa fa-thumbs-up">689 likes</i></p>
+							</div>
+							<div class="col-6">
+								<div class="form-element">
+									<div class="btn color subscribe">Subscribe</div>
+								</div>
+							</div>
+							<div class="col-6">
+								<div class="form-element">
+									<div class="btn color">Read more</div>
+								</div>
+							</div>
+					</div>
+
+
+					<div class="col-3 course"> <!-- Fag -->
+							<div class="col-12">
+								<img src="../img/courses/Cplus.png" alt="">
+							</div>
+							<div class="col-12">
+								<p id="snerk">Learn to code C++ with Gerardo De La Riva Espinosa</p>
+							</div>
+							<div class="col-12 rating">
+								<p><i class="fa fa-thumbs-up">689 likes</i></p>
+							</div>
+							<div class="col-6">
+								<div class="form-element">
+									<div class="btn color subscribe">Subscribe</div>
+								</div>
+							</div>
+							<div class="col-6">
+								<div class="form-element">
+									<div class="btn color">Read more</div>
+								</div>
+							</div>
+					</div>
+
+
+
+				</div>
+			</div>
+		</div><!--container-->
+	<script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+
+	<script>
+	$(function(){
+		$('.subscribe').on("click", function(){
+			$(this).removeClass("color").addClass("success");
+			$(this).text("Subscribed");
+		});
+	});//onready
+
+	</script>
+
+
 </body>
 </html>
