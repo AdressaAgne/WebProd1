@@ -71,3 +71,23 @@ input[type="file"] {
 .file-upload:hover {
     background-color:#DDD
 }
+
+/* main_2 */
+.rating{
+  font-size:10em;
+}
+.course{
+  -webkit-box-shadow: 2px 2px 2px #888888;
+  -moz-box-shadow: 2px 2px 2px #888888;
+  -ms-box-shadow: 2px 2px 2px #888888;
+  -o-box-shadow: 2px 2px 2px #888888;
+  box-shadow: 2px 2px 2px #888888;
+  transition: all 0.2s ease;
+}
+.course:hover{
+  -webkit-box-shadow: 3px 3px 2px #888888;
+  -moz-box-shadow: 3px 3px 2px #888888;
+  -ms-box-shadow: 3px 3px 2px #888888;
+  -o-box-shadow: 3px 3px 2px #888888;
+  box-shadow: 3px 3px 2px #888888;
+}
