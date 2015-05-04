@@ -106,9 +106,11 @@
 				var email = document.getElementById("emailVal").value;
 
 				if(validateEmail(email)){
+					$("#emailVal").removeClass("negative danger").addClass("success");
 						$('#postvalidation').show();
 						document.getElementById("useremail").innerHTML = email;
 				}else{
+					$("#emailVal").removeClass("negative success").addClass("danger");
 					//e.preventDefault();
 				}
 			});
