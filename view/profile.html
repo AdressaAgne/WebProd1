@@ -60,10 +60,10 @@
 						</div>
 						<div class="col-12">
 							<ul class="list-stats">
-							    <li class="editable">Webutvikling</li>
-							    <li class="editable">Mobile media design</li>
-							    <li class="editable">programmering for web 1</li>
-							    <li class="editable">Norsk</li>
+							    <li class="editable">Programmering for web 1 - Introduction to Jquery</li>
+							    <li class="editable">Mobile media design - Chapter 01</li>
+							    <li class="editable">programmering for web 1 - JqueryUI</li>
+							    <li class="editable">Norsk - Henrik Ibsen</li>
 							</ul>
 						</div>
 					</div>
@@ -139,11 +139,13 @@
 $(function() {
      $('.edit').editable('http://www.example.com/save.php', {
          indicator : 'Saving...',
+				 cssclass : 'inherit', /* Does nothing it appears */
          tooltip   : 'Click to edit...'
      });
      $('.edit_area').editable('http://www.example.com/save.php', {
          type      : 'textarea',
          cancel    : 'Cancel',
+				 cssclass : 'inherit', /* Does nothing it appears */
          submit    : 'OK',
          indicator : '<img src="../img/indicator.gif">',
          tooltip   : 'Click to edit...'
@@ -151,6 +153,7 @@ $(function() {
 		$('.editable').editable('http://www.example.com/save.php', {
      data   : " {'A':'Unsubscribe','B':'Remove'}",
      type   : 'select',
+		 cssclass : 'inherit', /* Does nothing it appears */
      submit : 'OK'
  });
  });//onready
