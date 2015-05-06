@@ -95,12 +95,12 @@
                   <h3>Øyvind Grimstad</h3>
                   <ul class="list-stats" id="userInfo">
                     <li><h4>Information</h4></li>
-                      <li>ID Nr: 123456</li>
-                      <li>Email: snerk@snerk.cnerk</li>
-                      <li>Tlf: 12356789</li>
-                      <li>Adress: heisann veien 123</li>
-                      <li>Active: <span>True</span></li>
-                      <div class="align-right"><button class="btn color">Edit</button></div>
+										<li>ID Nr: <span class="edit" style="display: inline;">123456</span></li>
+								    <li>Email: <span class="edit" style="display: inline;">email@example.com</span></li>
+								    <li>Tlf: <span class="edit" style="display: inline;">47484950</span></li>
+								    <li>Adress: <span class="edit" style="display: inline;">Teknologivegen 22</span></li>
+                      <li class="editable">Active: <span>True</span></li>
+                      <!--<div class="align-right"><button class="btn color">Edit</button></div>-->
                   </ul>
                   <ul class="list-stats" id="userCourses">
                     <li><h4>Ongoing courses</h4></li>
@@ -108,7 +108,7 @@
                       <li>Mobile media design</li>
                       <li>programmering for web 1</li>
                       <li>Norsk</li>
-                      <div class="align-right"><button class="btn color">Edit</button></div>
+                      <!--<div class="align-right"><button class="btn color">Edit</button></div>-->
                   </ul>
                 </div>
               </div>
@@ -255,7 +255,7 @@
       </div><!-- tab-content -->
   </div><!-- tabs -->
 </div><!-- Container -->
-
+<script src="http://www.appelsiini.net/download/jquery.jeditable.js"></script>
 <script>
 $(document).ready(function() {
   $('.tabs .tab-links a').on('click', function(e)  {
@@ -264,7 +264,31 @@ $(document).ready(function() {
       $(this).parent('li').addClass('active').siblings().removeClass('active');
 			e.preventDefault();
   });
-});
+
+
+		$('.edit').editable('http://www.example.com/save.php', {
+				indicator : 'Saving...',
+				cssclass : 'inherit',
+				style    : 'inherit',
+				tooltip   : 'Click to edit...'
+		});
+		$('.edit_area').editable('http://www.example.com/save.php', {
+				type      : 'textarea',
+				cancel    : 'Cancel',
+				cssclass : 'inherit',
+				submit    : 'OK',
+				indicator : '<img src="../img/indicator.gif">',
+				tooltip   : 'Click to edit...'
+		});
+		$('.editable').editable('http://www.example.com/save.php', {
+		data   : " {'': '', 'A':'False','B':'True'}",
+		type   : 'select',
+		cssclass : 'inherit',
+		submit : 'OK',
+		style  : 'inherit',
+		tooltip   : 'Click to edit...'
+	});
+});//onready
 </script>
 </body>
 <html>
