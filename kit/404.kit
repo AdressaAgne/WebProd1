@@ -10,15 +10,6 @@
 
   <title>Ttitle</title>
 
-  <style>
-  .favorite{
-    font-size:1.5em;;
-  }
-    .stjerne{
-      color:orange;
-    }
-  </style>
-
   <!--Main css-->
   <link rel="stylesheet" href="../css/main.css" />
 	<link rel="stylesheet" href="../css/font-awesome.min.css" />
@@ -35,32 +26,9 @@
         <button class="btn success" onclick="goBack()" style="padding:25px; margin-top:50px;">&lt;&lt; Go Back</button>
       </div>
     </div>
-    <div class="col-12">
-      <p class="favorite">Favorite this page: <a href=""><i class="fa fa-star stjerne"></i></a></p>
-    </div>
 
-
-    <div class="col-12">
-      <a class="display" role="button">Recomend via email</a>
-
-      <div class="mydiv">
-        <div class="left col-12">
-          <input type="text" id="file-upload"/>
-        </div>
-      </div>
-    </div>
-
-  </div>
-  <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
 
   <script>
-
-  $(function(){
-    $(".display").click(function() {
-      $(this).next(".mydiv").slideToggle();
-    });//evtListener DIALOG
-  });//onready
-
   function goBack() {
       window.history.back();
   }
