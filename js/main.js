@@ -32,6 +32,7 @@ function setVolume(v) {
 	video.volume = v;
 	updateVolumeValueBar();
 }
+
 function updateVolumeValueBar() {
 	var vol = video.volume * 100;
 	volumebari.style.width = vol+"%";
@@ -50,6 +51,7 @@ function updateVolumeValueBar() {
 speed.addEventListener("change", function() {
 	video.playbackRate = this.value;
 });
+
 volumebar.addEventListener("mousedown", function(e) {
 	volumeDown = true;
 	setVolume(e.offsetX / volumebar.clientWidth);
@@ -104,6 +106,8 @@ document.addEventListener("mouseup", function(e) {
 	barDown = false;
 	volumeDown = false;
 });
+
+
 function toTime(sec) {
 	
 	var hours = Math.floor(sec / 3600);
@@ -112,6 +116,8 @@ function toTime(sec) {
 	
 	return hours + "h " + minutes + "m " + parseInt(seconds) + "s";
 }
+
+var pdf = [0.57, 15.67];
 function updateTimerBar() {
 	var l = video.duration;
 	var c = video.currentTime;
@@ -125,6 +131,13 @@ function updateTimerBar() {
 	if (p == 100) {
 		wrapper.className = "video-wrapper pause";
 		playbtn.innerHTML = "<i class='fa fa-refresh fa-fw'></i>";
+	}
+	
+	for (var i = 0; i < pdf.length; i++) {
+		if (p >= pdf.i) {
+			console.log(pdf[i]);
+			document.getElementById("pdf-image").src = "../img/pdf/"+i+".png";
+		}
 	}
 }
 
@@ -155,32 +168,4 @@ tags.addEventListener("click", function(e) {
 		var l = video.duration / 100;
 		video.currentTime = p * l;
 	}
-	
-	
 });
-
-PDFJS.getDocument('helloworld.pdf').then(function(pdf) {
-  // Using promise to fetch the page
-  pdf.getPage(1).then(function(page) {
-    var scale = 1.5;
-    var viewport = page.getViewport(scale);
-
-    //
-    // Prepare canvas using PDF page dimensions
-    //
-    var canvas = document.getElementById('the-canvas');
-    var context = canvas.getContext('2d');
-    canvas.height = viewport.height;
-    canvas.width = viewport.width;
-
-    //
-    // Render PDF page into canvas context
-    //
-    var renderContext = {
-      canvasContext: context,
-      viewport: viewport
-    };
-    page.render(renderContext);
-  });
-});
-
