@@ -96,7 +96,10 @@
 	<script>
 		$(function(){
 			$('.deleteLecture').on('click', function(){
-				$(this).parent().parent().slideUp();
+				var conf = confirm("Are you sure?");
+					if(conf){
+						$(this).parent().parent().parent().parent().slideUp();
+					}
 			});//delete event
 		});//onready
 	</script>
