@@ -117,7 +117,7 @@ function toTime(sec) {
 	return hours + "h " + minutes + "m " + parseInt(seconds) + "s";
 }
 
-var pdf = [0.57, 15.67];
+var pdf = [0, 15, 18, 20.53, 25, 30.67, 45.2, 50, 63.6, 68.3, 76.5, 80.4, 91, 100];
 function updateTimerBar() {
 	var l = video.duration;
 	var c = video.currentTime;
@@ -131,14 +131,42 @@ function updateTimerBar() {
 	if (p == 100) {
 		wrapper.className = "video-wrapper pause";
 		playbtn.innerHTML = "<i class='fa fa-refresh fa-fw'></i>";
+		document.getElementById("pdf-image").setAttribute("data-current", 0);
 	}
 	
-	for (var i = 0; i < pdf.length; i++) {
-		if (p >= pdf.i) {
-			console.log(pdf[i]);
-			document.getElementById("pdf-image").src = "../img/pdf/"+i+".png";
+	var currentIMG = parseInt(document.getElementById("pdf-image").getAttribute("data-current"));
+	
+	
+	if (!video.paused) {
+		if (p >= Number(pdf[currentIMG]) && p <= Number(pdf[currentIMG+1])) {
+			document.getElementById("pdf-image").src = "../img/pdf/"+(currentIMG+1)+".png";
+			document.getElementById("pdf-image").setAttribute("data-current", currentIMG + 1);
 		}
 	}
+
+}
+
+document.getElementById("pdf-backward").addEventListener("click", function() {
+	var currentIMG = parseInt(document.getElementById("pdf-image").getAttribute("data-current"));	
+	jump(pdf[parseInt(currentIMG - 1)]);
+	document.getElementById("pdf-image").setAttribute("data-current", parseInt(currentIMG) - 1);
+	document.getElementById("pdf-image").src = "../img/pdf/"+(currentIMG)+".png";
+	console.log(document.getElementById("pdf-image").getAttribute("data-current"));
+});
+
+document.getElementById("pdf-forward").addEventListener("click", function() {
+	var currentIMG = parseInt(document.getElementById("pdf-image").getAttribute("data-current"));
+	
+	jump(pdf[parseInt(currentIMG + 1)]);
+	
+	document.getElementById("pdf-image").setAttribute("data-current", parseInt(currentIMG) + 1);
+	document.getElementById("pdf-image").src = "../img/pdf/"+(currentIMG+2)+".png";
+	console.log(document.getElementById("pdf-image").getAttribute("data-current"));
+});
+
+function jump(p) {
+	var l = video.duration / 100;
+	video.currentTime = p * l;
 }
 
 function resize() {
