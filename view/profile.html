@@ -14,7 +14,7 @@
 	<link rel="stylesheet" href="../css/main.css" />
 	<link rel="stylesheet" type="text/css" href="../css/font-awesome.min.css">
 </head>
-
+						
 <div class="container">
 	<div class="nav-bar nav-bar-fixed">
         <div id="pull" class="pull">
@@ -27,7 +27,10 @@
             <li class="none"><a href="courses.html">Courses</a></li>
             <li class="none"><a href="manage_users.html">Manage Users</a></li>
             <li class="right"><a href="login.html">Logout</a></li>
-            <li class="right"><input type="search" class="search negative small" /><div class="search-bar"></div></li>
+           
+            <li class="right"><a href="about.html">About</a></li>
+            <li class="right"><a href="contact.html">Contact</a></li>
+             <li class="right"><input type="search" class="search negative small" /><div class="search-bar"></div></li>
         </ul>
     </div>
 </div>
@@ -148,7 +151,7 @@
 			         tooltip   : 'Click to edit...'
 			     });
 					$('.editable').editable('http://www.example.com/save.php', {
-			     data   : " {'': '', 'A':'Watch latest lecture', 'B':'Unsubscribe','C':'Remove'}",
+					 data   : " {'': '', 'A':'Watch latest lecture', 'B':'Unsubscribe','C':'Remove'}",
 			     type   : 'select',
 					 cssclass : 'inherit', /* Does nothing it appears */
 			     submit : 'OK',
